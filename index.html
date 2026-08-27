@@ -966,7 +966,7 @@ input[type="date"]{
     <div class="login-header">
       <div class="hosp">TAICHUNG VETERANS GENERAL HOSPITAL</div>
       <div class="title">胸腔部呼吸治療科<br>實習學習護照 e-Portfolio</div>
-      <div class="sub">長期呼吸治療學實習系統</div>
+      <div class="sub">長期呼吸治療學實習系統　<span style="color:#4D7C0F;font-weight:700;">v1.0.2</span></div>
     </div>
     <div class="login-body">
       <div class="role-tabs">
@@ -1048,7 +1048,7 @@ input[type="date"]{
     <div class="topbar-left">
       <div>
         <div class="topbar-title">臺中榮總 — e-Portfolio</div>
-        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸治療學實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.0 · 2026.08</span></div>
+        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸治療學實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.2 · 2026.08</span></div>
       </div>
     </div>
     <div class="topbar-right">
@@ -1079,6 +1079,47 @@ input[type="date"]{
 <div class="toast" id="toast"></div>
 
 <script>
+/* ═══════════════════════════════════════════════════════════════════════
+   ★ 本機儲存空間隔離（LTC 專用命名空間）
+   ───────────────────────────────────────────────────────────────────────
+   問題：小兒版、重症版、長期版三套系統都放在同一個網域
+         （https://popololoqoo-wei.github.io/…），瀏覽器的 localStorage
+         是「以網域為單位」共用的，三套系統會互相看到對方的快取
+         —— 例如長期版的後台會冒出小兒版的老師名單。
+         用 file:// 在本機直接開檔時也一樣（Chrome 讓所有本機檔案共用）。
+
+   解法：把本系統所有 localStorage 的 key 自動加上 'ltc_' 前綴，
+         讓三套系統各用各的空間，完全互不干擾。
+         程式其他地方完全不用改寫法。
+   ═══════════════════════════════════════════════════════════════════════ */
+(function(){
+  var NS = 'ltc_';
+  var real;
+  try{ real = window.localStorage; }catch(e){ return; }
+  if(!real) return;
+  var shim = {
+    getItem   : function(k){ try{ return real.getItem(NS+k); }catch(e){ return null; } },
+    setItem   : function(k,v){ try{ return real.setItem(NS+k,v); }catch(e){} },
+    removeItem: function(k){ try{ return real.removeItem(NS+k); }catch(e){} },
+    key       : function(i){ try{ var ks=nsKeys(); return i<ks.length?ks[i]:null; }catch(e){ return null; } },
+    clear     : function(){ try{ nsKeys().forEach(function(k){ real.removeItem(NS+k); }); }catch(e){} }
+  };
+  function nsKeys(){
+    var out=[];
+    for(var i=0;i<real.length;i++){
+      var k=real.key(i);
+      if(k && k.indexOf(NS)===0) out.push(k.substring(NS.length));
+    }
+    return out;
+  }
+  Object.defineProperty(shim,'length',{ get:function(){ try{ return nsKeys().length; }catch(e){ return 0; } } });
+  try{
+    Object.defineProperty(window,'localStorage',{ configurable:true, get:function(){ return shim; } });
+  }catch(e){
+    try{ window.localStorage = shim; }catch(e2){}
+  }
+})();
+
 /* ═══════════ STATE ═══════════ */
 const ADMIN_EMAIL='popololoqoo@gmail.com';
 /* ★ 選填：本系統專屬 Google 試算表的網址（管理頁面的「開啟 Google Sheet」連結）
@@ -1099,16 +1140,18 @@ const GOOGLE_CLIENT_ID = _storedClientId || '416198803583-raro6tl5kbp1582m27heqc
 let CONFIG_GID = safeReadConfigGid();
 
 /* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-   ★  必填：長期呼吸治療學實習專用的 Google Apps Script 部署網址        ★
+   ★  長期呼吸治療學實習專用的 Google Apps Script 部署網址（已填好）    ★
    ★                                                                    ★
-   ★  請依照「長期實習_GAS部署說明.md」建立專屬後端，取得形如          ★
-   ★    https://script.google.com/macros/s/AKfycb.../exec               ★
-   ★  的網址後，把下面這一行的 YOUR_GAS_URL_HERE 整段換掉。            ★
+   ★  ✅ 已設定完成，正常情況下不需要再修改這一行。                     ★
    ★                                                                    ★
-   ★  ⚠ 千萬不要沿用小兒版或重症版的網址，                              ★
-   ★    否則本系統的資料會寫進那兩套系統的 Google 試算表。              ★
+   ★  日後若「重新建立」後端（不是更新版本，而是全新部署），            ★
+   ★  才需要把下面這一行單引號中間的網址整段換掉。                      ★
+   ★                                                                    ★
+   ★  ⚠ 注意：檔案其他地方還有 5 處寫著 YOUR_GAS_URL_HERE，             ★
+   ★    那些是「判斷有沒有設定過」的檢查點，                            ★
+   ★    千萬不要改，改了會讓功能失效。                                  ★
    ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
-const GAS_URL = 'YOUR_GAS_URL_HERE';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbw-xpkwsDa_wHBcLzYUbIKasg-xBUTBaZpobbRQYIglCre8LFhYrh4ROl2NsG1XDFrRtQ/exec';
 
 /* ─── 【資安修補 v18】後端寫入驗證機制全面升級 ───
    舊版 (v17): 用 GAS_WRITE_SECRET 字串做防護 — 但這字串寫在 HTML 中，
@@ -1139,17 +1182,17 @@ function getSessionToken(){
 }
 function clearSession(){
   SESSION_TOKEN = null; SESSION_EXPIRES_AT = 0;
-  try{ sessionStorage.removeItem('ep_session'); }catch(e){}
+  try{ sessionStorage.removeItem('ltc_ep_session'); }catch(e){}
 }
 function saveSession(token, expiresInSec){
   SESSION_TOKEN = token;
   SESSION_EXPIRES_AT = Date.now() + (expiresInSec || 8*3600) * 1000;
   // 用 sessionStorage 而非 localStorage，分頁關閉就消失
-  try{ sessionStorage.setItem('ep_session', JSON.stringify({t:token, e:SESSION_EXPIRES_AT})); }catch(e){}
+  try{ sessionStorage.setItem('ltc_ep_session', JSON.stringify({t:token, e:SESSION_EXPIRES_AT})); }catch(e){}
 }
 function restoreSession(){
   try{
-    const raw = sessionStorage.getItem('ep_session');
+    const raw = sessionStorage.getItem('ltc_ep_session');
     if(!raw) return;
     const o = JSON.parse(raw);
     if(o && o.t && o.e && o.e > Date.now()){
