@@ -60,57 +60,57 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* ─── 配色系統 v3 ─── 長期呼吸治療學實習：橄欖苔綠 × 勃根地酒紅 ─── */
+  /* ─── 配色系統 v3 ─── 長期呼吸治療學實習：深松墨綠 × 陶土赭 ─── */
   /* 設計說明：
-     · 學生填寫區 = 橄欖苔綠（沉穩、耐看，與小兒版的湖水綠、重症版的鈷藍明顯區隔）
-     · 老師填寫區 = 勃根地酒紅（比重症版的正紅更深、更帶紫調，一眼可分辨）
+     · 學生填寫區 = 深松墨綠（低彩度、深色調，沉穩耐看）
+     · 老師填寫區 = 陶土赭（帶土感的暖紅棕，與松綠形成柔和的補色關係）
      · 警示訊息   = 保留琥珀黃（第三色，不與學生/老師撞色）
      · 底色       = 暖砂米白，整體呈現「紙本檔案夾」的質感              */
   --topbar-h:     56px;
 
   /* 中性色（主背景與文字）*/
-  --bg:           #F7F6F1;       /* 主背景：暖砂米白 */
-  --bg-soft:      #EFEDE4;       /* 次背景 */
+  --bg:           #FAF8F4;       /* 主背景：暖砂米白 */
+  --bg-soft:      #F0ECE4;       /* 次背景 */
   --paper:        #FFFFFF;       /* 卡片底色：純白 */
-  --ink:          #24261E;       /* 主要文字：深橄欖墨 */
-  --ink2:         #4A4E40;       /* 次要文字 */
-  --ink3:         #737866;       /* 輔助文字 */
-  --ink4:         #A3A794;       /* 提示文字 */
+  --ink:          #22201C;       /* 主要文字：深橄欖墨 */
+  --ink2:         #4B4740;       /* 次要文字 */
+  --ink3:         #7A756B;       /* 輔助文字 */
+  --ink4:         #A9A398;       /* 提示文字 */
 
-  /* 主色：橄欖苔綠（= 學生色）*/
-  --primary:      #4D7C0F;       /* 主色 */
-  --primary2:     #3F6212;       /* 主色深 */
-  --primary-soft: #F0F6E1;       /* 主色淡底 */
-  --primary-line: #C9E08D;       /* 主色淡邊 */
+  /* 主色：深松墨綠（= 學生色）*/
+  --primary:      #1F5F4B;       /* 主色 */
+  --primary2:     #164539;       /* 主色深 */
+  --primary-soft: #E9F2EE;       /* 主色淡底 */
+  --primary-line: #B2D3C6;       /* 主色淡邊 */
 
   /* 強調色（黃銅金點綴）*/
-  --gold:         #A97C2B;
-  --gold2:        #CE9F45;
-  --gold-soft:    #FAF2DF;
+  --gold:         #A6803C;
+  --gold2:        #C9A45C;
+  --gold-soft:    #F8F1E2;
 
   /* 狀態色 */
-  --red:          #9F1239;       /* 勃根地酒紅：警告 / 老師 */
-  --red-soft:     #FFE9EF;
-  --red-line:     #F6B3C6;
-  --green:        #047857;       /* 成功 / 已完成 */
-  --green-soft:   #D3F4E5;
-  --green-line:   #9DE0C2;
-  --blue:         #4D7C0F;       /* 學生 = 主色（橄欖苔綠）*/
-  --blue-soft:    #F0F6E1;
-  --blue-line:    #C9E08D;
+  --red:          #A8452F;       /* 陶土赭：警告 / 老師 */
+  --red-soft:     #FBEFEB;
+  --red-line:     #E7BFB2;
+  --green:        #2E7D5B;       /* 成功 / 已完成 */
+  --green-soft:   #DCF0E7;
+  --green-line:   #A5D8C3;
+  --blue:         #1F5F4B;       /* 學生 = 主色（深松墨綠）*/
+  --blue-soft:    #E9F2EE;
+  --blue-line:    #B2D3C6;
 
-  /* 老師專用色（勃根地酒紅系）*/
-  --teacher:      #9F1239;
-  --teacher2:     #831234;
-  --teacher-soft: #FFF4F6;
-  --teacher-line: #EDA9BC;
+  /* 老師專用色（陶土赭系）*/
+  --teacher:      #A8452F;
+  --teacher2:     #8A3524;
+  --teacher-soft: #FCF3F0;
+  --teacher-line: #E7BFB2;
 
   /* 邊線與陰影 */
-  --border:       #DED8C8;       /* 主邊線 */
-  --border2:      #EAE6DA;       /* 次邊線 */
-  --shadow-sm:    0 1px 2px rgba(36,38,30,.04), 0 1px 3px rgba(36,38,30,.06);
-  --shadow:       0 2px 4px rgba(36,38,30,.06), 0 4px 12px rgba(36,38,30,.08);
-  --shadow-lg:    0 4px 8px rgba(36,38,30,.08), 0 12px 24px rgba(36,38,30,.10);
+  --border:       #E3DCD0;       /* 主邊線 */
+  --border2:      #EFEAE1;       /* 次邊線 */
+  --shadow-sm:    0 1px 2px rgba(34,32,28,.04), 0 1px 3px rgba(34,32,28,.06);
+  --shadow:       0 2px 4px rgba(34,32,28,.06), 0 4px 12px rgba(34,32,28,.08);
+  --shadow-lg:    0 4px 8px rgba(34,32,28,.08), 0 12px 24px rgba(34,32,28,.10);
 
   /* 向下相容（舊變數仍指向新色）*/
   --cream:        var(--bg);
@@ -127,7 +127,7 @@
 body{font-family:var(--ff-sans);background:var(--bg);color:var(--ink);min-height:100vh;font-size:14px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 
 /* ─── WATERMARK TEXTURE ─── 改為極淡的點狀紋理 ─── */
-body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(77,124,15,.05) 1px, transparent 0);background-size:24px 24px;pointer-events:none;z-index:0;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(31,95,75,.05) 1px, transparent 0);background-size:24px 24px;pointer-events:none;z-index:0;}
 
 /* ─── SCREENS ─── */
 .screen{display:none;position:relative;z-index:1;}
@@ -136,9 +136,9 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 /* ─── LOGIN ─── 方案B：白底卡 + 深藍頂條，靠左排版（醫療文件感） ─── */
 #login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem;background:#F4F6FA;}
 .login-card{background:var(--paper);border:1px solid #E5EAF1;border-radius:var(--r2);box-shadow:0 1px 3px rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.06);width:100%;max-width:460px;overflow:hidden;}
-.login-header{background:#FFFFFF;border-top:4px solid #3F6212;padding:2rem 2rem 1.5rem;text-align:left;position:relative;}
+.login-header{background:#FFFFFF;border-top:4px solid #164539;padding:2rem 2rem 1.5rem;text-align:left;position:relative;}
 .login-header::after{display:none;}
-.login-header .hosp{font-size:11px;color:#3F6212;letter-spacing:2px;margin-bottom:8px;font-family:var(--ff-sans);font-weight:600;}
+.login-header .hosp{font-size:11px;color:#164539;letter-spacing:2px;margin-bottom:8px;font-family:var(--ff-sans);font-weight:600;}
 .login-header .title{font-family:var(--ff-serif);font-size:22px;color:#1A2332;font-weight:600;line-height:1.4;text-shadow:none;letter-spacing:.5px;}
 .login-header .sub{font-size:11px;color:#6B7689;margin-top:8px;letter-spacing:.5px;}
 .login-body{padding:2rem;}
@@ -149,7 +149,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .fg{margin-bottom:1.1rem;}
 .fg label{display:block;font-size:11px;font-weight:600;color:var(--ink3);margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase;}
 .fg input,.fg select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r);background:#fff;color:var(--ink);font-size:13px;font-family:var(--ff-sans);outline:none;transition:all .2s;}
-.fg input:focus,.fg select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(77,124,15,.14);}
+.fg input:focus,.fg select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(31,95,75,.14);}
 .login-err{font-size:12px;color:var(--red);margin-top:6px;display:none;background:var(--red-soft);padding:6px 10px;border-radius:var(--r);border:1px solid var(--red-line);}
 .btn-primary{width:100%;padding:12px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary2) 100%);color:#fff;border:none;border-radius:var(--r);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--ff-sans);letter-spacing:.5px;transition:all .2s;margin-top:.25rem;box-shadow:var(--shadow-sm);}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
@@ -168,7 +168,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 
 /* ─── MAIN APP ─── */
 #app-screen{min-height:100vh;}
-.topbar{background:linear-gradient(100deg,#3F6212,#4D7C0F);color:#fff;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(15,23,42,.15);}
+.topbar{background:linear-gradient(100deg,#164539,#1F5F4B);color:#fff;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(15,23,42,.15);}
 .topbar-left{display:flex;align-items:center;gap:12px;}
 .topbar-title{font-family:var(--ff-serif);font-size:15px;font-weight:600;letter-spacing:.3px;}
 .topbar-sub{font-size:11px;color:rgba(255,255,255,.7);margin-top:1px;}
@@ -405,12 +405,12 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .tag{font-size:10px;padding:3px 8px;border-radius:999px;font-weight:600;letter-spacing:.2px;}
 .tag-both{background:var(--green-soft);color:var(--green);border:1px solid var(--green-line);}
 .tag-student{background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue-line);}
-.tag-teacher{background:#FBE3EA;color:#831234;border:1px solid #EDA9BC;}
+.tag-teacher{background:#F6E4DD;color:#8A3524;border:1px solid #E7BFB2;}
 .form-card-status{font-size:10px;color:var(--ink3);}
 
 /* ─── FORM DETAIL ─── */
 .form-detail-view{padding:1.5rem;max-width:900px;}
-.form-detail-header{background:linear-gradient(120deg,#3F6212,#4D7C0F);color:#fff;border-radius:var(--r2);padding:1.4rem 1.5rem;margin-bottom:1.25rem;position:relative;overflow:hidden;box-shadow:var(--shadow);}
+.form-detail-header{background:linear-gradient(120deg,#164539,#1F5F4B);color:#fff;border-radius:var(--r2);padding:1.4rem 1.5rem;margin-bottom:1.25rem;position:relative;overflow:hidden;box-shadow:var(--shadow);}
 .form-detail-header::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(194,138,44,.7);}
 .form-detail-header::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.05);pointer-events:none;}
 .form-detail-header h1{font-family:var(--ff-serif);font-size:18px;font-weight:600;letter-spacing:.5px;}
@@ -442,8 +442,8 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
    這個色組是全站基準，所有「學生／老師」區塊都遵循，避免深淺不一。 */
 
 /* 學生卡片 */
-.card.s-card{background:#F5F9EC;border:2px solid #C9E08D;}
-.card.s-card .card-head{background:linear-gradient(135deg,#4D7C0F 0%,#3F6212 100%);border-bottom:none;}
+.card.s-card{background:#EDF4F0;border:2px solid #B2D3C6;}
+.card.s-card .card-head{background:linear-gradient(135deg,#1F5F4B 0%,#164539 100%);border-bottom:none;}
 .card.s-card .card-head-title{color:#fff;}
 
 /* 老師卡片（手動加 class） */
@@ -452,8 +452,8 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .card.t-card .card-head-title{color:#fff;}
 
 /* 混合卡片（共同填寫） */
-.card.m-card{background:linear-gradient(180deg,#F5F9EC 0%,var(--teacher-soft) 100%);}
-.card.m-card .card-head{background:linear-gradient(90deg,#F0F6E1 0%,#FBE3EA 100%);}
+.card.m-card{background:linear-gradient(180deg,#EDF4F0 0%,var(--teacher-soft) 100%);}
+.card.m-card .card-head{background:linear-gradient(90deg,#E9F2EE 0%,#F6E4DD 100%);}
 .card.m-card .card-head-title{color:#1F2937;}
 
 /* ─── 自動套用「老師」配色：所有 card-head 內含 t-badge 的卡片，自動視為老師卡片 ───
@@ -480,7 +480,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 
 /* 混合卡片內的學生／老師子區塊 */
 .s-block{background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:var(--r);padding:12px 14px;margin:10px 0;}
-.s-block-title{font-size:12px;font-weight:700;color:#3F6212;margin-bottom:8px;letter-spacing:.2px;}
+.s-block-title{font-size:12px;font-weight:700;color:#164539;margin-bottom:8px;letter-spacing:.2px;}
 .t-block{background:var(--teacher-soft);border:1px solid var(--teacher-line);border-radius:var(--r);padding:12px 14px;margin:10px 0;}
 .t-block-title{font-size:12px;font-weight:700;color:var(--teacher2);margin-bottom:8px;letter-spacing:.2px;}
 
@@ -490,12 +490,12 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .field>label{display:block;font-size:12px;font-weight:600;color:var(--ink2);margin-bottom:6px;letter-spacing:.2px;}
 .field input[type=text],.field input[type=number],.field input[type=date],.field textarea,.field select{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--r);background:#fff;color:var(--ink);font-size:13px;font-family:var(--ff-sans);outline:none;transition:all .15s;box-shadow:inset 0 1px 2px rgba(15,23,42,.02);}
 .field input:hover,.field textarea:hover,.field select:hover{border-color:#9CA5B5;}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(77,124,15,.14);}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(31,95,75,.14);}
 .field input:disabled,.field textarea:disabled,.field select:disabled{background:var(--bg-soft);color:var(--ink3);cursor:not-allowed;border-color:var(--border2);}
 .field textarea{resize:vertical;min-height:72px;line-height:1.6;}
-.t-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:#FBE3EA;color:var(--teacher2);border:1px solid var(--teacher-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
+.t-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:#F6E4DD;color:var(--teacher2);border:1px solid var(--teacher-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
 .s-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
-.m-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:linear-gradient(90deg,var(--blue-soft) 0%,#FBE3EA 100%);color:var(--teacher2);border:1px solid var(--teacher-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
+.m-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:linear-gradient(90deg,var(--blue-soft) 0%,#F6E4DD 100%);color:var(--teacher2);border:1px solid var(--teacher-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
 
 /* ─── 表單填寫進度條(置於 form-detail-header 下方) ─── */
 .form-progress{
@@ -512,7 +512,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .form-progress-label .fp-num{color:var(--primary2);font-weight:700;font-size:13px;}
 .form-progress-label .fp-pct{color:var(--ink3);font-size:11px;margin-left:6px;font-weight:500;}
 .form-progress-track{flex:1;height:8px;background:#EEF2F7;border-radius:999px;overflow:hidden;position:relative;}
-.form-progress-fill{height:100%;background:linear-gradient(90deg,#4D7C0F 0%,#3F6212 100%);border-radius:999px;transition:width .3s ease;width:0%;}
+.form-progress-fill{height:100%;background:linear-gradient(90deg,#1F5F4B 0%,#164539 100%);border-radius:999px;transition:width .3s ease;width:0%;}
 .form-progress.is-done .form-progress-fill{background:linear-gradient(90deg,#22C55E 0%,#059669 100%);}
 .form-progress.is-done .form-progress-label .fp-num{color:#059669;}
 @media(max-width:560px){
@@ -634,16 +634,16 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .dops-tbl td{padding:6px 5px;border-right:1px solid var(--border2);border-bottom:1px solid var(--border2);vertical-align:middle;background:#fff;}
 .dops-tbl td:last-child{border-right:none;}
 .dops-tbl tr:last-child td{border-bottom:none;}
-.dops-tbl .item-cell{font-size:11px;color:var(--teacher2);background:linear-gradient(90deg,var(--teacher-soft) 0%,#FBE3EA 100%);padding:6px 10px;font-weight:500;}
-.d-btn{width:28px;height:28px;border-radius:6px;border:2px solid #E0A93C;background:#FFFBF0;font-size:12px;cursor:pointer;color:#B45309;transition:all .15s;font-weight:600;}
-.d-btn:not(:disabled):hover{background:#FBE3B8;color:#7C3A06;border-color:#D97706;transform:translateY(-1px);}
-.d-btn.sel{background:#D97706;color:#fff;border-color:#B45309;font-weight:800;box-shadow:0 2px 5px rgba(180,83,9,.4);}
+.dops-tbl .item-cell{font-size:11px;color:var(--ink2);background:var(--paper);padding:6px 10px;font-weight:500;}
+.d-btn{width:28px;height:28px;border-radius:6px;border:1.5px solid var(--teacher-line);background:var(--paper);font-size:12px;cursor:pointer;color:var(--teacher2);transition:all .15s;font-weight:600;}
+.d-btn:not(:disabled):hover{background:var(--teacher-soft);border-color:var(--teacher);transform:translateY(-1px);}
+.d-btn.sel{background:var(--teacher);color:#fff;border-color:var(--teacher2);font-weight:800;box-shadow:0 2px 5px rgba(168,69,47,.35);}
 .d-btn:disabled{cursor:not-allowed;opacity:.4;}
 
 /* ─── EPA levels ─── */
 .epa-level{display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;margin-bottom:8px;transition:all .2s;background:#fff;}
 .epa-level.sel{border-color:var(--primary);background:linear-gradient(135deg,var(--primary-soft) 0%,#EFF6FF 100%);box-shadow:0 2px 8px rgba(37,99,235,.12);}
-.epa-level:hover:not([data-locked]):not(.sel){border-color:var(--primary-line);background:#FBFAF4;transform:translateX(2px);}
+.epa-level:hover:not([data-locked]):not(.sel){border-color:var(--primary-line);background:#FCFAF6;transform:translateX(2px);}
 .epa-level[data-locked]{cursor:not-allowed;opacity:0.6;pointer-events:none;background:var(--bg-soft);}
 .epa-lv-num{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);}
 .epa-lv-desc{font-size:12px;color:var(--ink2);}
@@ -726,7 +726,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .history-time{color:var(--ink3);font-family:'SF Mono','Monaco','Cascadia Code',monospace;font-size:11px;}
 .history-who{padding:2px 9px;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:.2px;}
 .hw-s{background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue-line);}
-.hw-t{background:#FBE3EA;color:var(--teacher2);border:1px solid var(--teacher-line);}
+.hw-t{background:#F6E4DD;color:var(--teacher2);border:1px solid var(--teacher-line);}
 .hw-a{background:var(--gold-soft);color:var(--gold);border:1px solid #ECD08C;}
 
 /* ─── ADMIN PANEL ─── */
@@ -736,9 +736,9 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .admin-card-body{padding:1.3rem;}
 .admin-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
 .admin-row input{flex:1;min-width:120px;padding:8px 12px;border:1px solid var(--border);border-radius:var(--r);font-size:13px;background:#fff;color:var(--ink);transition:all .15s;}
-.admin-row input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(77,124,15,.14);outline:none;}
+.admin-row input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(31,95,75,.14);outline:none;}
 .admin-row select{flex:1;min-width:120px;padding:8px 12px;border:1px solid var(--border);border-radius:var(--r);font-size:13px;background:#fff;color:var(--ink);}
-.btn-add{padding:8px 16px;background:linear-gradient(135deg,var(--green) 0%,#047857 100%);color:#fff;border:none;border-radius:var(--r);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;box-shadow:0 1px 3px rgba(5,150,105,.25);}
+.btn-add{padding:8px 16px;background:linear-gradient(135deg,var(--green) 0%,#2E7D5B 100%);color:#fff;border:none;border-radius:var(--r);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;box-shadow:0 1px 3px rgba(5,150,105,.25);}
 .btn-add:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(5,150,105,.35);}
 .btn-del{padding:6px 11px;background:#fff;color:var(--red);border:1px solid var(--red-line);border-radius:var(--r);font-size:11px;cursor:pointer;font-weight:500;transition:all .15s;}
 .btn-del:hover{background:var(--red);color:#fff;border-color:var(--red);}
@@ -750,7 +750,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .accounts-table td{padding:9px 12px;border-right:1px solid var(--border2);border-bottom:1px solid var(--border2);color:var(--ink);background:#fff;}
 .accounts-table td:last-child{border-right:none;}
 .accounts-table tr:last-child td{border-bottom:none;}
-.accounts-table tbody tr:hover td{background:#FBFAF4;}
+.accounts-table tbody tr:hover td{background:#FCFAF6;}
 .gs-status{font-size:12px;padding:8px 12px;border-radius:var(--r);margin-top:6px;font-weight:500;}
 .gs-ok{background:var(--green-soft);color:#065F46;border:1px solid var(--green-line);}
 .gs-err{background:var(--red-soft);color:#991B1B;border:1px solid var(--red-line);}
@@ -966,7 +966,7 @@ input[type="date"]{
     <div class="login-header">
       <div class="hosp">TAICHUNG VETERANS GENERAL HOSPITAL</div>
       <div class="title">胸腔部呼吸治療科<br>實習學習護照 e-Portfolio</div>
-      <div class="sub">長期呼吸治療學實習系統　<span style="color:#4D7C0F;font-weight:700;">v1.0.2</span></div>
+      <div class="sub">長期呼吸治療學實習系統　<span style="color:#1F5F4B;font-weight:700;">v1.0.3</span></div>
     </div>
     <div class="login-body">
       <div class="role-tabs">
@@ -1048,7 +1048,7 @@ input[type="date"]{
     <div class="topbar-left">
       <div>
         <div class="topbar-title">臺中榮總 — e-Portfolio</div>
-        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸治療學實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.2 · 2026.08</span></div>
+        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸治療學實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.3 · 2026.08</span></div>
       </div>
     </div>
     <div class="topbar-right">
@@ -1061,7 +1061,7 @@ input[type="date"]{
     </div>
   </div>
   <!-- 快捷導覽列 -->
-  <div id="quick-nav" style="display:none;background:linear-gradient(180deg,#FBFAF4 0%,#F1EFE4 100%);border-bottom:1px solid var(--border);padding:8px 1rem;flex-wrap:wrap;gap:8px;align-items:center;position:sticky;top:var(--topbar-h,56px);z-index:150;box-shadow:0 1px 3px rgba(15,23,42,.04);">
+  <div id="quick-nav" style="display:none;background:linear-gradient(180deg,#FCFAF6 0%,#F0ECE3 100%);border-bottom:1px solid var(--border);padding:8px 1rem;flex-wrap:wrap;gap:8px;align-items:center;position:sticky;top:var(--topbar-h,56px);z-index:150;box-shadow:0 1px 3px rgba(15,23,42,.04);">
     <button onclick="renderFormList()" class="qnav-btn qnav-overview">📋 總覽</button>
     <button onclick="renderStatusSection('new')" class="qnav-btn qnav-new">⭕ 未填 <b id="qnav-new-cnt">-</b> 份</button>
     <button onclick="renderStatusSection('draft')" class="qnav-btn qnav-draft" title="尚未完成的表單（包含未儲存的、以及已儲存但必填欄位還沒填齊的）">✏️ 草稿中(未完成) <b id="qnav-draft-cnt">-</b> 份</button>
@@ -2541,7 +2541,7 @@ const FORMS=[
   {id:'F04M',num:'壹拾',name:'床邊教學訓練記錄表',sub:'床邊教學紀錄',roles:'both'},
   {id:'F06M',num:'壹拾貳',name:'病例導向評估表 CbD',sub:'Case-Based Discussion',roles:'both'},
   {id:'F07M',num:'壹拾參',name:'360 度評估表',sub:'多面向評核',roles:'both'},
-  {id:'F08',num:'壹拾肆',name:'全人照護紀錄表',sub:'NICU/PICU 全人會議',roles:'both'},
+  {id:'F08',num:'壹拾肆',name:'全人照護紀錄表',sub:'醫病共享決策 SDM',roles:'both'},
   {id:'F09',num:'壹拾伍',name:'跨領域團隊合作照護訓練紀錄表',sub:'跨團隊晨間會議',roles:'both'},
   {id:'F10A',num:'壹拾陸',name:'輔導記錄表',sub:'實習總指導教師',roles:'both'},
   {id:'F11',num:'壹拾柒',name:'個人化學習計畫 ILPs',sub:'學習目標計畫',roles:'both'},
@@ -3356,22 +3356,22 @@ function showAutoSaveIndicator(state, countdownSec){
 /* 各表單學生必填欄位定義 */
 const REQUIRED_STUDENT_FIELDS = {
   // F01A 學前評值（學生單填）
-  F01A: ['s_name','school','intern_cat','s_date','s_sign','s_sign_date'].concat(Array.from({length:29},function(_,i){return 'f01_pre_'+i;})),
-  // F01B 學後評值（含 28 個學後自評 + 28 個指導者評核 + 雙方簽名）
+  F01A: ['s_name','school','intern_cat','s_date','s_sign','s_sign_date'].concat(Array.from({length:23},function(_,i){return 'f01_pre_'+i;})),
+  // F01B 學後評值（23 個學後自評 + 23 個指導者評核 + 雙方簽名）
   F01B: ['s_name','school','intern_cat','s_date','s_sign','s_sign_date','t_sign','t_sign_date']
-    .concat(Array.from({length:29},function(_,i){return 'f01_post_'+i;}))
-    .concat(Array.from({length:29},function(_,i){return 'f01_p1_'+i;})),
+    .concat(Array.from({length:23},function(_,i){return 'f01_post_'+i;}))
+    .concat(Array.from({length:23},function(_,i){return 'f01_p1_'+i;})),
   // F02 臨床表現
   F02: ['s_name','school','intern_cat','s_date','s_comment','t_fb','s_sign','s_sign_date','t_sign','t_sign_date'].concat(Array.from({length:14},function(_,i){return 'f02_'+i;})),
   // F04 床邊教學
   F04M: ['s_name','school','s_date','intern_cat','bed','pt_name','gender','birth_date','diagnosis','rt_ind','vent_type','medical_focus','rt_plan','t_fb','t_sign','t_sign_date','s_sign','s_sign_date'],
   F04S: ['s_name','school','s_date','intern_cat','bed','pt_name','gender','birth_date','diagnosis','rt_ind','vent_type','medical_focus','rt_plan','t_fb','t_sign','t_sign_date','s_sign','s_sign_date'],
   // F06 CbD
-  F06M: ['s_name','school','intern_cat','s_date','complexity','case_dx','t_level',
+  F06M: ['s_name','school','intern_cat','s_date','bed','pt_name','complexity','case_dx','t_level',
     'f06_0','f06_1','f06_2','f06_3','f06_4','f06_5','f06_6',
     's_feeling','t_good','s_improve','t_improve','s_satisfy','t_satisfy','obs_min','fb_min',
     's_sign','s_sign_date','t_sign','t_sign_date'],
-  F06S: ['s_name','school','intern_cat','s_date','complexity','case_dx','t_level',
+  F06S: ['s_name','school','intern_cat','s_date','bed','pt_name','complexity','case_dx','t_level',
     'f06_0','f06_1','f06_2','f06_3','f06_4','f06_5','f06_6',
     's_feeling','t_good','s_improve','t_improve','s_satisfy','t_satisfy','obs_min','fb_min',
     's_sign','s_sign_date','t_sign','t_sign_date'],
@@ -4034,7 +4034,7 @@ window.showAboutDialog = function(){
       'toast 進度訊息延長至 8~10 秒,避免一閃即逝',
     ]},
     {ver:'v1.5.3', date:'2026.05', notes:[
-      '長期呼吸治療學實習版本建置(配色:橄欖苔綠 × 勃根地酒紅)',
+      '長期呼吸治療學實習版本建置(配色:深松墨綠 × 陶土赭)',
       '原因:#f16-floating-thead 是 appendChild 到 document.body 的 fixed 元素',
       'openForm/renderAdmin 切換時未清除,scroll 監聽也持續觸發顯示',
       '在三個切換入口(openForm/renderFormList/renderAdmin)補上清除邏輯',
@@ -7400,7 +7400,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
 
   // F01A 核心課程學前評值表
   if(id==='F01A'){
-    var skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','抽痰(Open、In-line)','氣切照護(tracheostomy care)','拔管技術(Extubation technique)','氣囊壓力維持(MLT、MOV方法)','咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','認識並操作非侵入性機械通氣治療','NPB-840呼吸器','Servo系列呼吸器','Hamilton-G5呼吸器','NKV-550呼吸器','Drager系列呼吸器','操作呼吸脫離指標','全人照護參與'];
+    var skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','人工氣道照護－抽痰(Open、In-line)','人工氣道照護－氣切照護(tracheostomy care)','人工氣道照護－拔管技術(Extubation technique)','人工氣道照護－氣囊壓力維持(MLT、MOV)','人工氣道照護－咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','非侵入性機械通氣治療－BiPAP(Flexo、Astral)','操作呼吸脫離指標','跨團隊會議參與(如:團隊查房、晨會等)'];
     html+='<div class="section-head">基本資料</div>';
     html+='<table>';
     html+=pdfR('學生姓名',studentName||val('s_name'),false);
@@ -7436,7 +7436,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
 
   // F01B 核心課程學後評值表
   if(id==='F01B'){
-    var skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','抽痰(Open、In-line)','氣切照護(tracheostomy care)','拔管技術(Extubation technique)','氣囊壓力維持(MLT、MOV方法)','咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','認識並操作非侵入性機械通氣治療','NPB-840呼吸器','Servo系列呼吸器','Hamilton-G5呼吸器','NKV-550呼吸器','Drager系列呼吸器','操作呼吸脫離指標','全人照護參與'];
+    var skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','人工氣道照護－抽痰(Open、In-line)','人工氣道照護－氣切照護(tracheostomy care)','人工氣道照護－拔管技術(Extubation technique)','人工氣道照護－氣囊壓力維持(MLT、MOV)','人工氣道照護－咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','非侵入性機械通氣治療－BiPAP(Flexo、Astral)','操作呼吸脫離指標','跨團隊會議參與(如:團隊查房、晨會等)'];
     html+='<div class="section-head">基本資料</div>';
     html+='<table>';
     html+=pdfR('學生姓名',studentName||val('s_name'),false);
@@ -7450,7 +7450,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='<th colspan="4" style="background:#2471A3;color:#fff;padding:5px;border:1px solid #DDD;text-align:center;">學後自評</th>';
     html+='<th colspan="4" style="background:#B45309;color:#fff;padding:5px;border:1px solid #DDD;text-align:center;">指導者評核(1)</th></tr>';
     html+='<tr><th style="border:1px solid #DDD;background:var(--cream);"></th>';
-    var bgs=['#F0F6E1','#F0F6E1','#F0F6E1','#F0F6E1','#FEF3C7','#FEF3C7','#FEF3C7','#FEF3C7'];
+    var bgs=['#E9F2EE','#E9F2EE','#E9F2EE','#E9F2EE','#FEF3C7','#FEF3C7','#FEF3C7','#FEF3C7'];
     ['佳','可','差','NA','佳','可','差','NA'].forEach(function(v,i){
       html+='<th style="background:'+bgs[i]+';border:1px solid #DDD;width:40px;text-align:center;padding:3px 2px;">'+v+'</th>';
     });
@@ -7459,7 +7459,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
       var post=d['f01_post_'+i]||'',p1=d['f01_p1_'+i]||'';
       html+='<tr><td style="padding:3px 6px;border:1px solid #DDD;font-size:9pt;">'+(i+1)+'. '+skill+'</td>';
       ['佳','可','差','NA'].forEach(function(v){var s=post===v;html+='<td style="text-align:center;border:1px solid #DDD;background:'+(s?(v==='NA'?'#7F8C8D':'#2471A3'):'#fff')+';font-size:12pt;color:'+(s?'#fff':'transparent')+';">✓</td>';});
-      ['佳','可','差','NA'].forEach(function(v){var s=p1===v;html+='<td style="text-align:center;border:1px solid #DDD;background:'+(s?(v==='NA'?'#7F8C8D':'#D97706'):'#FEF9F9')+';font-size:12pt;color:'+(s?'#fff':'transparent')+';">✓</td>';});
+      ['佳','可','差','NA'].forEach(function(v){var s=p1===v;html+='<td style="text-align:center;border:1px solid #DDD;background:'+(s?(v==='NA'?'#7F8C8D':'#D97706'):'#FCF6F4')+';font-size:12pt;color:'+(s?'#fff':'transparent')+';">✓</td>';});
       html+='</tr>';
     });
     html+='</table>';
@@ -7564,7 +7564,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     // ── 三、呼吸治療評估 ──
     html+='<div class="section-head">三、呼吸治療評估</div>';
     var ventArr=[];try{ventArr=JSON.parse(d['vent_type']||'[]');}catch(e){}
-    var allVent=['AVEA','Servo','Newport e360','Drager','Bubble CPAP'];
+    var allVent=['Servo','NPB-840','Airvo2'];
     html+='<table><tr><td colspan="2" style="border:1px solid #DDD;padding:5px 8px;"><b>呼吸器機型：</b>';
     allVent.forEach(function(vt){
       var checked=ventArr.indexOf(vt)>=0;
@@ -7573,7 +7573,6 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='</td></tr>';
     html+='<tr>';
     html+='<td style="border:1px solid #DDD;padding:4px 8px;font-size:10pt;">Servo 型號：'+(val('vent_servo_note')||'—')+'</td>';
-    html+='<td style="border:1px solid #DDD;padding:4px 8px;font-size:10pt;">Drager 型號：'+(val('vent_drager_note')||'—')+'</td>';
     html+='</tr>';
     html+='</table>';
 
@@ -7733,7 +7732,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='</table>';
 
     // ── 填寫說明 ──
-    html+='<div style="background:#F4F7EC;border-left:4px solid #4D7C0F;padding:6px 10px;margin:6px 0;font-size:10pt;color:#3F6212;line-height:1.7;">'+
+    html+='<div style="background:#EDF4F0;border-left:4px solid #1F5F4B;padding:6px 10px;margin:6px 0;font-size:10pt;color:#164539;line-height:1.7;">'+
       '請您紀錄在實習期間所見所思、接觸病人體驗、學習成長心得及自我改善，請就態度、技能、知識三個構面來寫。</div>';
 
     // ── 1~5 文字題 ──
@@ -7752,7 +7751,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     ['非常有收穫','有收穫','尚可','沒有收穫'].forEach(function(o){
       var sel=(val('f12_q6')===o);
       html+='<td style="text-align:center;border:1px solid #DDD;padding:5px 8px;font-size:10pt;width:25%;'+
-        (sel?'background:#4D7C0F;color:#fff;font-weight:700;':'background:#FAFBFF;color:#666;')+'">'+
+        (sel?'background:#1F5F4B;color:#fff;font-weight:700;':'background:#FAFBFF;color:#666;')+'">'+
         (sel?'☑ ':'□ ')+o+'</td>';
     });
     html+='</tr></table>';
@@ -7760,9 +7759,9 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     // ── 7. 知識應用頻率 ──
     html+='<div class="section-head">7. 在長期呼吸治療實習過程中</div>';
     html+='<table style="font-size:10pt;">';
-    html+='<tr><th style="background:#3F6212;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:left;">項目</th>'+
+    html+='<tr><th style="background:#164539;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:left;">項目</th>'+
       ['經常','偶而','從未'].map(function(o){
-        return '<th style="background:#3F6212;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:12%;">'+o+'</th>';
+        return '<th style="background:#164539;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:12%;">'+o+'</th>';
       }).join('')+'</tr>';
     [['f12_q7_1','我應用醫學倫理與法律的知識與討論於實際臨床個案'],
      ['f12_q7_2','我應用實證醫學的知識與討論於實際臨床個案'],
@@ -7775,7 +7774,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
       ['經常','偶而','從未'].forEach(function(o){
         var sel=(cur===o);
         html+='<td style="text-align:center;border:1px solid #DDD;padding:3px;'+
-          (sel?'background:#4D7C0F;color:#fff;font-weight:700;':'color:#bbb;')+'">'+(sel?'✓':'')+'</td>';
+          (sel?'background:#1F5F4B;color:#fff;font-weight:700;':'color:#bbb;')+'">'+(sel?'✓':'')+'</td>';
       });
       html+='</tr>';
     });
@@ -7918,6 +7917,8 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+=pdfR('實習學校',val('school'),false);
     html+=pdfR('實習日期',val('s_date'),false);
     html+=pdfR('實習類別',val('intern_cat'),false);
+    html+=pdfR('病床號',val('bed')||'—',false);
+    html+=pdfR('病人名',val('pt_name')||'—',false);
     html+=pdfR('病情複雜度',val('complexity'),false);
     html+=pdfR('主診斷',val('case_dx')||val('diagnosis'),false);
     html+='</table>';
@@ -7930,7 +7931,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
       var scoreColor=scoreNum>=7?'#27AE60':scoreNum>=4?'#F39C12':'#E74C3C';
       var scoreLabel=scoreNum>=7?'優良':scoreNum>=4?'合乎標準':'有待加強';
       html+='<tr><td style="padding:5px 8px;border:1px solid #DDD;font-size:10pt;">'+(i+1)+'. '+item+'</td>';
-      html+='<td style="text-align:center;border:1px solid #DDD;background:#FEF9F9;">';
+      html+='<td style="text-align:center;border:1px solid #DDD;background:#FCF6F4;">';
       if(score==='NA'||score==='na'){html+='<span style="color:#888;">NA</span>';}
       else if(score){html+='<span style="font-size:14pt;font-weight:700;color:'+scoreColor+';">'+score+'</span><br><span style="font-size:8pt;color:'+scoreColor+';">'+scoreLabel+'</span>';}
       html+='</td></tr>';
@@ -8009,7 +8010,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
       html+='<td style="padding:3px 5px;border:1px solid #DDD;font-size:9pt;">'+r[2]+'</td>';
       opts.forEach(function(v){
         var sel=(score===v||score===String(v));
-        html+='<td style="text-align:center;border:1px solid #DDD;padding:3px;background:'+(sel?'#C0392B':'#FEF9F9')+';font-size:9pt;color:'+(sel?'#fff':'#888')+';font-weight:'+(sel?'700':'400')+';white-space:nowrap;">';
+        html+='<td style="text-align:center;border:1px solid #DDD;padding:3px;background:'+(sel?'#C0392B':'#FCF6F4')+';font-size:9pt;color:'+(sel?'#fff':'#888')+';font-weight:'+(sel?'700':'400')+';white-space:nowrap;">';
         html+=(sel?'✓ ':'')+v+'</td>';
       });
       html+='<td style="text-align:center;border:1px solid #DDD;font-size:11pt;font-weight:700;color:'+(score?'#C0392B':'#ccc')+';background:#FFF5F5;">'+(score||'—')+'</td>';
@@ -8104,7 +8105,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
       html+='<td style="padding:5px 8px;border:1px solid #DDD;background:#FFF5F5;font-size:10pt;">'+q[1]+'</td>';
       ['是','否'].forEach(function(opt){
         var sel=ans===opt;
-        html+='<td style="text-align:center;border:1px solid #DDD;padding:4px;background:'+(sel?'#C0392B':'#FEF9F9')+';color:'+(sel?'#fff':'#bbb')+';font-weight:'+(sel?'700':'400')+';font-size:11pt;">'+(sel?'✓ '+opt:opt)+'</td>';
+        html+='<td style="text-align:center;border:1px solid #DDD;padding:4px;background:'+(sel?'#C0392B':'#FCF6F4')+';color:'+(sel?'#fff':'#bbb')+';font-weight:'+(sel?'700':'400')+';font-size:11pt;">'+(sel?'✓ '+opt:opt)+'</td>';
       });
       html+='</tr>';
     });
@@ -8528,10 +8529,10 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
       var sec='<div class="section-head">'+title+'</div>';
       sec+='<table style="font-size:9pt;">';
       sec+='<tr>';
-      sec+='<th style="background:#3F6212;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:left;">評值項目</th>';
-      sec+='<th style="background:#3F6212;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:8%;">配分</th>';
-      sec+='<th style="background:#4D7C0F;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:14%;">學生自評</th>';
-      sec+='<th style="background:#9F1239;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:16%;">指導老師評分</th>';
+      sec+='<th style="background:#164539;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:left;">評值項目</th>';
+      sec+='<th style="background:#164539;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:8%;">配分</th>';
+      sec+='<th style="background:#1F5F4B;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:14%;">學生自評</th>';
+      sec+='<th style="background:#A8452F;color:#fff;padding:4px 6px;border:1px solid #DDD;text-align:center;width:16%;">指導老師評分</th>';
       sec+='</tr>';
       items.forEach(function(it,i){
         var tKey=prefix+i, sKey=sPrefix+i;
@@ -8541,14 +8542,14 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
         sec+='<tr>';
         sec+='<td style="padding:4px 6px;border:1px solid #DDD;background:#FAFBFF;font-size:9pt;">'+it+'</td>';
         sec+='<td style="text-align:center;border:1px solid #DDD;font-size:9pt;color:#666;">5</td>';
-        sec+='<td style="text-align:center;border:1px solid #DDD;font-size:11pt;font-weight:700;color:'+(ssc?'#4D7C0F':'#ccc')+';background:#F4F7EC;">'+(ssc||'—')+'</td>';
-        sec+='<td style="text-align:center;border:1px solid #DDD;font-size:11pt;font-weight:700;color:'+(sc?'#9F1239':'#ccc')+';background:#FDF2F5;">'+(sc||'—')+'</td>';
+        sec+='<td style="text-align:center;border:1px solid #DDD;font-size:11pt;font-weight:700;color:'+(ssc?'#1F5F4B':'#ccc')+';background:#EDF4F0;">'+(ssc||'—')+'</td>';
+        sec+='<td style="text-align:center;border:1px solid #DDD;font-size:11pt;font-weight:700;color:'+(sc?'#A8452F':'#ccc')+';background:#FBF1ED;">'+(sc||'—')+'</td>';
         sec+='</tr>';
       });
-      sec+='<tr style="background:#F1F4E8;">';
-      sec+='<td colspan="2" style="padding:5px 8px;border:1px solid #DDD;text-align:right;font-weight:700;font-size:10pt;color:#3F6212;">小計（滿分 '+maxScore+'）</td>';
-      sec+='<td style="text-align:center;border:1px solid #DDD;font-size:13pt;font-weight:700;color:#4D7C0F;">'+sSum+'</td>';
-      sec+='<td style="text-align:center;border:1px solid #DDD;font-size:13pt;font-weight:700;color:#9F1239;">'+sum+'</td>';
+      sec+='<tr style="background:#EAF1EC;">';
+      sec+='<td colspan="2" style="padding:5px 8px;border:1px solid #DDD;text-align:right;font-weight:700;font-size:10pt;color:#164539;">小計（滿分 '+maxScore+'）</td>';
+      sec+='<td style="text-align:center;border:1px solid #DDD;font-size:13pt;font-weight:700;color:#1F5F4B;">'+sSum+'</td>';
+      sec+='<td style="text-align:center;border:1px solid #DDD;font-size:13pt;font-weight:700;color:#A8452F;">'+sum+'</td>';
       sec+='</tr>';
       sec+='</table>';
       return {html:sec,sum:sum,sSum:sSum};
@@ -8564,10 +8565,10 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     var bonusScore=(bonusVal&&bonusVal.indexOf('+5')>=0)?5:0;
     html+='<div class="section-head">加分項目</div>';
     html+='<table>';
-    html+='<tr><td style="padding:5px 8px;border:1px solid #DDD;background:#FDF2F5;font-size:10pt;width:70%;">臨床專業能力可獨立負責一般治療師 1/2 以上工作量</td>';
+    html+='<tr><td style="padding:5px 8px;border:1px solid #DDD;background:#FBF1ED;font-size:10pt;width:70%;">臨床專業能力可獨立負責一般治療師 1/2 以上工作量</td>';
     ['是（+5分）','否（+0分）'].forEach(function(opt){
       var sel=bonusVal===opt;
-      html+='<td style="text-align:center;border:1px solid #DDD;padding:4px;background:'+(sel?'#047857':'#FEF9F9')+';color:'+(sel?'#fff':'#bbb')+';font-weight:'+(sel?'700':'400')+';font-size:10pt;width:15%;">'+(sel?'✓ '+opt:opt)+'</td>';
+      html+='<td style="text-align:center;border:1px solid #DDD;padding:4px;background:'+(sel?'#2E7D5B':'#FCF6F4')+';color:'+(sel?'#fff':'#bbb')+';font-weight:'+(sel?'700':'400')+';font-size:10pt;width:15%;">'+(sel?'✓ '+opt:opt)+'</td>';
     });
     html+='</tr>';
     html+='</table>';
@@ -8577,16 +8578,16 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     var f15Pass=f15Total>=60;
     html+='<div class="section-head">分數自動計算</div>';
     html+='<table>';
-    html+='<tr><td colspan="2" style="background:#FAF2DF;border:1px solid #CE9F45;padding:5px 12px;font-size:10pt;font-weight:700;color:#6B4E12;">★ 實習總分數須 ≧ 60 分才算及格（正式成績＝指導老師評分＋加分；學生自評不計入成績）</td></tr>';
+    html+='<tr><td colspan="2" style="background:#F8F1E2;border:1px solid #C9A45C;padding:5px 12px;font-size:10pt;font-weight:700;color:#6B5220;">★ 實習總分數須 ≧ 60 分才算及格（正式成績＝指導老師評分＋加分；學生自評不計入成績）</td></tr>';
     html+='</table>';
     html+='<table>';
     html+='<tr>';
-    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#F1F4E8;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">一、學習態度</div><div style="font-size:14pt;font-weight:700;color:#9F1239;">'+attRes.sum+'</div><div style="font-size:9pt;color:#888;">/ 25</div></td>';
-    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#F1F4E8;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">二、專業知識技能</div><div style="font-size:14pt;font-weight:700;color:#9F1239;">'+sklRes.sum+'</div><div style="font-size:9pt;color:#888;">/ 50</div></td>';
-    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#F1F4E8;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">三、溝通協調</div><div style="font-size:14pt;font-weight:700;color:#9F1239;">'+comRes.sum+'</div><div style="font-size:9pt;color:#888;">/ 25</div></td>';
-    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#E9F6F0;text-align:center;width:11%;"><div style="font-size:9pt;color:#666;">加分</div><div style="font-size:14pt;font-weight:700;color:#047857;">+'+bonusScore+'</div></td>';
-    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#FDF2F5;text-align:center;width:21%;"><div style="font-size:9pt;color:#666;">實習總分（老師評分）</div><div style="font-size:18pt;font-weight:700;color:'+(f15Pass?'#047857':'#9F1239')+';">'+f15Total+'</div><div style="font-size:9pt;color:#888;">/ 105 '+(f15Pass?'✓ 及格':'✗ 未及格')+'</div></td>';
-    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#F4F7EC;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">學生自評總分</div><div style="font-size:14pt;font-weight:700;color:#4D7C0F;">'+f15StuTotal+'</div><div style="font-size:9pt;color:#888;">/ 100（不計成績）</div></td>';
+    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#EAF1EC;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">一、學習態度</div><div style="font-size:14pt;font-weight:700;color:#A8452F;">'+attRes.sum+'</div><div style="font-size:9pt;color:#888;">/ 25</div></td>';
+    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#EAF1EC;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">二、專業知識技能</div><div style="font-size:14pt;font-weight:700;color:#A8452F;">'+sklRes.sum+'</div><div style="font-size:9pt;color:#888;">/ 50</div></td>';
+    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#EAF1EC;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">三、溝通協調</div><div style="font-size:14pt;font-weight:700;color:#A8452F;">'+comRes.sum+'</div><div style="font-size:9pt;color:#888;">/ 25</div></td>';
+    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#E4F1EA;text-align:center;width:11%;"><div style="font-size:9pt;color:#666;">加分</div><div style="font-size:14pt;font-weight:700;color:#2E7D5B;">+'+bonusScore+'</div></td>';
+    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#FBF1ED;text-align:center;width:21%;"><div style="font-size:9pt;color:#666;">實習總分（老師評分）</div><div style="font-size:18pt;font-weight:700;color:'+(f15Pass?'#2E7D5B':'#A8452F')+';">'+f15Total+'</div><div style="font-size:9pt;color:#888;">/ 105 '+(f15Pass?'✓ 及格':'✗ 未及格')+'</div></td>';
+    html+='<td style="border:1px solid #DDD;padding:6px 10px;background:#EDF4F0;text-align:center;width:17%;"><div style="font-size:9pt;color:#666;">學生自評總分</div><div style="font-size:14pt;font-weight:700;color:#1F5F4B;">'+f15StuTotal+'</div><div style="font-size:9pt;color:#888;">/ 100（不計成績）</div></td>';
     html+='</tr>';
     html+='</table>';
     // ── 請假紀錄 ──
@@ -9242,7 +9243,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='</table>';
     // ── 70 題作答 ──
     html+='<div class="section-head">學習風格自我評估（共 70 題）</div>';
-    html+='<div style="background:#F2F1E7;border-radius:4px;padding:5px 10px;margin:6px 0;font-size:9pt;color:#1A5276;">'
+    html+='<div style="background:#F1EDE4;border-radius:4px;padding:5px 10px;margin:6px 0;font-size:9pt;color:#1A5276;">'
         + '<strong>0 分</strong> = 陳述不像你　　<strong>1 分</strong> = 有點像　　<strong>2 分</strong> = 很像</div>';
     html+='<table style="font-size:9pt;">';
     html+='<tr>';
@@ -9688,13 +9689,13 @@ function refreshFormUI(formKey){
         var isTeacher = b.getAttribute('data-teacher')==='1';
         var v = b.getAttribute('data-rval');
         var isNA = v==='NA';
-        var selBg = isNA?'#7F8C8D':(isTeacher?'#B45309':'#4D7C0F');
+        var selBg = isNA?'#7F8C8D':(isTeacher?'#B45309':'#1F5F4B');
         // 雲端有值且等於此按鈕的 rval 才選中;否則全部回到未選
         var shouldSel = (curVal!==undefined && curVal!==null && curVal!=='' && curVal===v);
         b.style.background = shouldSel?selBg:'#fff';
-        b.style.color = shouldSel?'#fff':'#7A706A';
+        b.style.color = shouldSel?'#fff':'#7A756B';
         b.style.fontWeight = shouldSel?'700':'400';
-        b.style.borderColor = shouldSel?selBg:'#D4C9BB';
+        b.style.borderColor = shouldSel?selBg:'#DCD3C6';
         if(shouldSel) _refreshedCount++;
       });
     });
@@ -9897,14 +9898,14 @@ function f01Click(btn){
   }
 
   // 更新 inline style(F01A/F01B 按鈕用 inline style 不是 CSS class)
-  var selBg=isTeacher?'#9F1239':'#4D7C0F';
+  var selBg=isTeacher?'#A8452F':'#1F5F4B';
   document.querySelectorAll('[data-rkey="'+key+'"]').forEach(function(b){
     // 清除時所有按鈕都回到未選樣式;否則只有對應 val 的按鈕變色
     var shouldSel = (!isToggleOff && b.getAttribute('data-rval')===val);
     b.style.background=shouldSel?selBg:'#fff';
-    b.style.color=shouldSel?'#fff':'#7A706A';
+    b.style.color=shouldSel?'#fff':'#7A756B';
     b.style.fontWeight=shouldSel?'700':'400';
-    b.style.borderColor=shouldSel?selBg:'#D4C9BB';
+    b.style.borderColor=shouldSel?selBg:'#DCD3C6';
   });
 
   // 再存資料(由 setRating 內部處理「再點清除」的資料層邏輯)
@@ -10281,22 +10282,22 @@ function basicInfoCard(fid,d,extraFields,dateLabel,singleDate,noDate){
 function buildF01A(f,d,canT,fkey,canS){
   if(canS===undefined)canS=true;
   const fid=fkey||f.id;
-  const skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統(如:BP、HR、SpO2、EtO2、RR)','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','人工氣道照護－抽痰(Open、In-line)','人工氣道照護－氣切照護(tracheostomy care)','人工氣道照護－拔管技術(Extubation technique)','人工氣道照護－氣囊壓力維持(MLT、MOV)','人工氣道照護－咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','非侵入性機械通氣治療－BiPAP(Flexo、Trilogy)','非侵入性機械通氣治療－Bubble CPAP','侵入性機械通氣治療－Servo I/U/N呼吸器','侵入性機械通氣治療－Drager系列(V系列與VN系列)','侵入性機械通氣治療－AVEA','侵入性機械通氣治療－e360','操作呼吸脫離指標','主治醫師巡視病房','跨團隊會議參與(如:團隊查房、晨會等)'];
+  const skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統(如:BP、HR、SpO2、EtO2、RR)','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','人工氣道照護－抽痰(Open、In-line)','人工氣道照護－氣切照護(tracheostomy care)','人工氣道照護－拔管技術(Extubation technique)','人工氣道照護－氣囊壓力維持(MLT、MOV)','人工氣道照護－咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','非侵入性機械通氣治療－BiPAP(Flexo、Astral)','操作呼吸脫離指標','跨團隊會議參與(如:團隊查房、晨會等)'];
 
   function mkBtn(key2,v,isTeacher){
     var cur=d[key2]||'';
     var isSel=cur===v;
     var isNA=v==='NA';
-    var selBg=isNA?'#7F8C8D':(isTeacher?'#B45309':'#4D7C0F');
+    var selBg=isNA?'#7F8C8D':(isTeacher?'#B45309':'#1F5F4B');
     var bg=isSel?selBg:'#fff';
-    var col=isSel?'#fff':'#7A706A';
+    var col=isSel?'#fff':'#7A756B';
     var fw=isSel?'700':'400';
     var dis=(isTeacher&&!canT)||(!isTeacher&&!canS);
     var disAttr=dis?' disabled':'';
     var cursor=dis?'not-allowed':'pointer';
     var op=dis?'0.35':'1';
     var w=isNA?'30px':'26px';
-    return '<button'+disAttr+' data-fid="'+fid+'" data-rkey="'+key2+'" data-rval="'+v+'" data-teacher="'+(isTeacher?1:0)+'" onclick="f01Click(this)" style="width:'+w+';height:26px;border:1px solid #D4C9BB;border-radius:4px;background:'+bg+';color:'+col+';font-size:9px;cursor:'+cursor+';opacity:'+op+';font-weight:'+fw+';">'+v+'</button>';
+    return '<button'+disAttr+' data-fid="'+fid+'" data-rkey="'+key2+'" data-rval="'+v+'" data-teacher="'+(isTeacher?1:0)+'" onclick="f01Click(this)" style="width:'+w+';height:26px;border:1px solid #DCD3C6;border-radius:4px;background:'+bg+';color:'+col+';font-size:9px;cursor:'+cursor+';opacity:'+op+';font-weight:'+fw+';">'+v+'</button>';
   }
 
   let h=basicInfoCard(fid,d,'');
@@ -10328,39 +10329,39 @@ function buildF01A(f,d,canT,fkey,canS){
 function buildF01B(f,d,canT,fkey,canS){
   if(canS===undefined)canS=true;
   const fid=fkey||f.id;
-  const skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統(如:BP、HR、SpO2、EtO2、RR)','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','人工氣道照護－抽痰(Open、In-line)','人工氣道照護－氣切照護(tracheostomy care)','人工氣道照護－拔管技術(Extubation technique)','人工氣道照護－氣囊壓力維持(MLT、MOV)','人工氣道照護－咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','非侵入性機械通氣治療－BiPAP(Flexo、Trilogy)','非侵入性機械通氣治療－Bubble CPAP','侵入性機械通氣治療－Servo I/U/N呼吸器','侵入性機械通氣治療－Drager系列(V系列與VN系列)','侵入性機械通氣治療－AVEA','侵入性機械通氣治療－e360','操作呼吸脫離指標','主治醫師巡視病房','跨團隊會議參與(如:團隊查房、晨會等)'];
+  const skills=['洗手技術','無菌操作','設備清潔、消毒','認識病歷','認識醫囑(含RT order)','認識及書寫RT紀錄','認識病患生命徵候及血液動力學監測系統(如:BP、HR、SpO2、EtO2、RR)','動脈血液氣體分析判讀','身體檢查與評估、呼吸音聽診','認識中央送氣(central piping)系統','認識不同的人工氣道','人工氣道照護－抽痰(Open、In-line)','人工氣道照護－氣切照護(tracheostomy care)','人工氣道照護－拔管技術(Extubation technique)','人工氣道照護－氣囊壓力維持(MLT、MOV)','人工氣道照護－咽喉呼吸道置入(Pharyngeal airway insertion)','認識並操作氧氣治療','認識並操作噴霧藥物治療(非呼吸器)','認識並操作噴霧藥物治療(呼吸器)','認識並操作呼吸器病患溼氣藥物治療','非侵入性機械通氣治療－BiPAP(Flexo、Astral)','操作呼吸脫離指標','跨團隊會議參與(如:團隊查房、晨會等)'];
 
   function mkBtn(key2,v,isTeacher){
     var cur=d[key2]||'';
     var isSel=cur===v;
     var isNA=v==='NA';
-    var selBg=isNA?'#7F8C8D':(isTeacher?'#B45309':'#4D7C0F');
+    var selBg=isNA?'#7F8C8D':(isTeacher?'#B45309':'#1F5F4B');
     var bg=isSel?selBg:'#fff';
-    var col=isSel?'#fff':'#7A706A';
+    var col=isSel?'#fff':'#7A756B';
     var fw=isSel?'700':'400';
     var dis=(isTeacher&&!canT)||(!isTeacher&&!canS);
     var disAttr=dis?' disabled':'';
     var cursor=dis?'not-allowed':'pointer';
     var op=dis?'0.35':'1';
     var w=isNA?'30px':'26px';
-    return '<button'+disAttr+' data-fid="'+fid+'" data-rkey="'+key2+'" data-rval="'+v+'" data-teacher="'+(isTeacher?1:0)+'" onclick="f01Click(this)" style="width:'+w+';height:26px;border:1px solid #D4C9BB;border-radius:4px;background:'+bg+';color:'+col+';font-size:9px;cursor:'+cursor+';opacity:'+op+';font-weight:'+fw+';">'+v+'</button>';
+    return '<button'+disAttr+' data-fid="'+fid+'" data-rkey="'+key2+'" data-rval="'+v+'" data-teacher="'+(isTeacher?1:0)+'" onclick="f01Click(this)" style="width:'+w+';height:26px;border:1px solid #DCD3C6;border-radius:4px;background:'+bg+';color:'+col+';font-size:9px;cursor:'+cursor+';opacity:'+op+';font-weight:'+fw+';">'+v+'</button>';
   }
 
   let h=basicInfoCard(fid,d,'');
   h+='<div class="card"><div class="card-head"><div class="card-head-title">核心技能評核<span class="t-badge">指導者欄位需老師填寫</span></div></div><div class="card-body" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">';
   h+='<table class="rating-table f01b-table"><tr>';
   h+='<th style="text-align:left;position:sticky;left:0;z-index:2;background:var(--cream);min-width:90px;max-width:120px;">核心技能學習目標</th>';
-  h+='<th colspan="4" style="background:#F0F6E1;">學後自評</th>';
-  h+='<th colspan="4" style="background:#FBE3EA;">指導者評核(1)<span class="t-badge">老師</span></th></tr>';
+  h+='<th colspan="4" style="background:#E9F2EE;">學後自評</th>';
+  h+='<th colspan="4" style="background:#F6E4DD;">指導者評核(1)<span class="t-badge">老師</span></th></tr>';
   h+='<tr>';
   h+='<th style="position:sticky;left:0;z-index:2;background:var(--cream);"></th>';
-  h+='<th style="background:#F0F6E1;">佳</th><th style="background:#F0F6E1;">可</th><th style="background:#F0F6E1;">差</th><th style="background:#F0F6E1;">NA</th>';
-  h+='<th style="background:#FBE3EA;">佳</th><th style="background:#FBE3EA;">可</th><th style="background:#FBE3EA;">差</th><th style="background:#FBE3EA;">NA</th></tr>';
+  h+='<th style="background:#E9F2EE;">佳</th><th style="background:#E9F2EE;">可</th><th style="background:#E9F2EE;">差</th><th style="background:#E9F2EE;">NA</th>';
+  h+='<th style="background:#F6E4DD;">佳</th><th style="background:#F6E4DD;">可</th><th style="background:#F6E4DD;">差</th><th style="background:#F6E4DD;">NA</th></tr>';
   skills.forEach(function(skill,i){
     var k1='f01_p1_'+i,kpo='f01_post_'+i;
     h+='<tr><td class="row-label f01b-label" style="position:sticky;left:0;background:#FAFAF8;z-index:1;max-width:120px;word-break:break-all;font-size:10px;">'+(i+1)+'. '+skill+'</td>';
-    ['佳','可','差','NA'].forEach(function(v){h+='<td style="text-align:center;background:#F5F9EC;">'+mkBtn(kpo,v,false)+'</td>';});
-    ['佳','可','差','NA'].forEach(function(v){h+='<td style="text-align:center;background:#FFF4F6;">'+mkBtn(k1,v,true)+'</td>';});
+    ['佳','可','差','NA'].forEach(function(v){h+='<td style="text-align:center;background:#EDF4F0;">'+mkBtn(kpo,v,false)+'</td>';});
+    ['佳','可','差','NA'].forEach(function(v){h+='<td style="text-align:center;background:#FCF3F0;">'+mkBtn(k1,v,true)+'</td>';});
     h+='</tr>';
   });
   h+='</table></div></div>';
@@ -10564,7 +10565,7 @@ function buildF04Bedside(f,d,canT,fkey,canS){
   indHtml+='<div style="display:inline-flex;align-items:center;gap:4px;margin-top:4px;"><span style="font-size:11px;">Others<span style="color:var(--ink3);">（其他）</span>：</span><input type="text" value="'+(d['rt_ind_others']||'')+'" data-fid="'+fid+'" data-key="rt_ind_others" onchange="'+othersOC+'" style="width:120px;padding:3px 6px;border:1px solid var(--border);border-radius:4px;font-size:11px;"></div>';
 
   // 呼吸器機型（複選）
-  var ventTypes=['AVEA','Servo','Newport e360','Drager','Bubble CPAP'];
+  var ventTypes=['Servo','NPB-840','Airvo2'];
   var savedVent=[];
   try{savedVent=JSON.parse(d['vent_type']||'[]');}catch(e){}
   var ventHtml='';
@@ -10576,9 +10577,8 @@ function buildF04Bedside(f,d,canT,fkey,canS){
       "saveDraftField('"+fid+"','vent_type',JSON.stringify(a));";
     ventHtml+='<label style="font-size:11px;margin-right:10px;display:inline-flex;align-items:center;gap:3px;"><input type="checkbox" '+chk+' onchange="'+oc+'"> '+vt+'</label>';
   });
-  // Servo 和 Drager 有附加說明欄（同步草稿）
+  // Servo 有附加型號說明欄（同步草稿）
   var servoOC="APP.formData['"+fid+"']=APP.formData['"+fid+"']||{};APP.formData['"+fid+"']['vent_servo_note']=this.value;saveDraftField('"+fid+"','vent_servo_note',this.value)";
-  var dragerOC="APP.formData['"+fid+"']=APP.formData['"+fid+"']||{};APP.formData['"+fid+"']['vent_drager_note']=this.value;saveDraftField('"+fid+"','vent_drager_note',this.value)";
 
   // 表單標題
   var isMedical=f.id==='F04M';
@@ -10656,7 +10656,6 @@ function buildF04Bedside(f,d,canT,fkey,canS){
   h+='<div style="display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:4px;">'+ventHtml+'</div>';
   h+='<div style="display:flex;gap:8px;margin-top:6px;align-items:center;flex-wrap:wrap;">';
   h+='<span style="font-size:11px;">Servo 型號：</span><input type="text" value="'+(d['vent_servo_note']||'')+'" data-fid="'+fid+'" data-key="vent_servo_note" onchange="'+servoOC+'" style="width:80px;padding:3px 6px;border:1px solid var(--border);border-radius:4px;font-size:11px;">';
-  h+='<span style="font-size:11px;">Drager 型號：</span><input type="text" value="'+(d['vent_drager_note']||'')+'" data-fid="'+fid+'" data-key="vent_drager_note" onchange="'+dragerOC+'" style="width:80px;padding:3px 6px;border:1px solid var(--border);border-radius:4px;font-size:11px;">';
   h+='</div></div>';
 
   // 呼吸器設定參數（完整依Word原稿）
@@ -10791,13 +10790,17 @@ function buildCbD(f,d,canT,fkey,canS){
   }
   var SATISFY_OPTS=['非常滿意','滿意','普通','不滿意','非常不滿意'];
   // CbD 加入 basicInfoCard（含實習學校、日期、類別）
-  let h=basicInfoCard(fid,d,'<div class="field"><label>主診斷</label>'+fi(fid,'case_dx','text',false)+'</div><div class="field"><label>病情複雜度</label><div class="check-group">'+cxBtns+'</div></div>');
+  let h=basicInfoCard(fid,d,
+    '<div class="field"><label>病床號</label>'+fi(fid,'bed','text',false)+'</div>'+
+    '<div class="field"><label>病人名</label>'+fi(fid,'pt_name','text',false)+'</div>'+
+    '<div class="field"><label>主診斷</label>'+fi(fid,'case_dx','text',false)+'</div>'+
+    '<div class="field"><label>病情複雜度</label><div class="check-group">'+cxBtns+'</div></div>');
   // 評量說明列
   h+='<div class="card"><div class="card-head"><div class="card-head-title">評量項目<span class="t-badge">老師評分</span></div></div><div class="card-body" style="overflow-x:auto;">';
   // 老師職級（老師勾選）
   h+='<div class="field" style="margin-bottom:10px;"><label>老師職級<span class="t-badge">老師</span></label>'
    + '<div class="check-group">'+cbdRadios('f06_lv','t_level',['RRT1','RRT2','RRT3'],true)+'</div></div>';
-  h+='<div style="background:#F2F1E7;border-radius:var(--r);padding:8px 12px;margin-bottom:8px;font-size:11px;color:var(--blue);">📊 評分標準：<strong>1～3分 = 有待加強</strong>　<strong>4～6分 = 合乎標準</strong>　<strong>7～9分 = 優良</strong>　UGY ≥ 5分合格</div>';
+  h+='<div style="background:#F1EDE4;border-radius:var(--r);padding:8px 12px;margin-bottom:8px;font-size:11px;color:var(--blue);">📊 評分標準：<strong>1～3分 = 有待加強</strong>　<strong>4～6分 = 合乎標準</strong>　<strong>7～9分 = 優良</strong>　UGY ≥ 5分合格</div>';
   h+='<table class="rating-table"><tr><th style="text-align:left;min-width:140px;">評量項目</th>';
   // 分組標題
   h+='<th colspan="3" style="background:#C8D8F0;color:#1A3A5C;">有待加強(1-3)</th>';
@@ -10894,7 +10897,7 @@ function build360(f,d,canT,fkey,canS){
   });
   h+='</table>';
   // 自動計算顯示區
-  h+='<div style="background:#F2F1E7;border-radius:var(--r);padding:10px 14px;margin-top:8px;font-size:12px;">';
+  h+='<div style="background:#F1EDE4;border-radius:var(--r);padding:10px 14px;margin-top:8px;font-size:12px;">';
   h+='<div style="font-weight:700;color:var(--blue);margin-bottom:6px;">📊 分數自動計算</div>';
   h+='<div style="display:flex;gap:24px;flex-wrap:wrap;">';
   // 態度：基本分80
@@ -10978,7 +10981,7 @@ function buildF08(f,d,canT,fkey,canS){
   const fid=fkey||f.id;
   if(canS===undefined)canS=true;
   const profs=['西醫','牙醫','中醫','藥事','醫事放射','醫事檢驗','牙體技術','護理','營養','助產','聽力','語言','物理','職能','臨床心理','諮商心理','呼吸治療'];
-  let h=basicInfoCard(fid,d,`<div class="field"><label>會議類別</label><div class="check-group">${['NICU全人會議','PICU全人會議'].map(v=>`<label class="check-item"><input type="radio" name="f08_cat" ${d['cat']===v?'checked':''} onchange="APP.formData['${fid}']=APP.formData['${fid}']||{};APP.formData['${fid}']['cat']='${v}'" style="accent-color:var(--gold);"> ${v}</label>`).join('')}</div></div>
+  let h=basicInfoCard(fid,d,`<div class="field"><label>會議類別</label><div class="check-group">${['醫病共享決策（Shared Decision Making）'].map(v=>`<label class="check-item"><input type="radio" name="f08_cat" ${d['cat']===v?'checked':''} onchange="APP.formData['${fid}']=APP.formData['${fid}']||{};APP.formData['${fid}']['cat']='${v}'" style="accent-color:var(--gold);"> ${v}</label>`).join('')}</div></div>
     <div class="field"><label>主診斷</label>${fi(fid,'diagnosis','text',false)}</div>
     <div class="field"><label>參加職類</label><div class="check-group">${profs.map(v=>`<label class="check-item"><input type="checkbox" ${d['prof_'+v]?'checked':''} onchange="APP.formData['${fid}']=APP.formData['${fid}']||{};APP.formData['${fid}']['prof_${v}']=this.checked" style="accent-color:var(--gold);"> ${v}</label>`).join('')}</div></div>`);
   h+=`<div class="card"><div class="card-head"><div class="card-head-title">全人討論（包含2個以上面向）<span style="font-size:11px;font-weight:600;color:#FEF3C7;background:rgba(245,158,11,.35);padding:2px 8px;border-radius:10px;margin-left:8px;border:1px solid rgba(254,243,199,.5);">⚠ 若無建議，請填寫「無」</span></div></div><div class="card-body">
@@ -11466,17 +11469,18 @@ function buildDOPS(f,d,canT,fkey,canS){
     var _mh=data.machineOpts.map(function(m){
       var _mc=(d['machine']===m)?'checked':'';
       var _mo="APP.formData['"+fid+"']=APP.formData['"+fid+"']||{};APP.formData['"+fid+"']['machine']='"+m+"';saveDraftField('"+fid+"','machine','"+m+"')";
-      return '<label class="check-item"><input type="radio" name="'+fid+'_machine" data-fid="'+fid+'" data-key="machine" '+_mc+' onchange="'+_mo+'" style="accent-color:#4D7C0F;"> '+m+'</label>';
+      return '<label class="check-item"><input type="radio" name="'+fid+'_machine" data-fid="'+fid+'" data-key="machine" '+_mc+' onchange="'+_mo+'" style="accent-color:#1F5F4B;"> '+m+'</label>';
     }).join('');
     _mx='<div class="field"><label>呼吸器機型（此份評核所考機型）</label><div class="check-group">'+_mh+'</div></div>';
   }
   let h=basicInfoCard(fid,d,_mx,'',false,true)+evalDateCard(fid,canT);
   let itemIdx=0;
   data.groups.forEach(g=>{
-    h+='<div class="card"><div class="card-head" style="background:linear-gradient(90deg,#FFF4F6,#FFF0F4);"><div class="card-head-title" style="color:#831234;">'+g.hd+'<span class="t-badge">老師評分 1-9 / NA</span></div></div><div class="card-body" style="overflow-x:auto;">';
-    h+='<div style="background:#F2F1E7;border-radius:var(--r);padding:6px 10px;margin-bottom:6px;font-size:10px;color:#831234;">📊 <strong>1-3分=有待加強</strong>　<strong>4-6分=符合標準</strong>　<strong>7-9分=優良</strong></div>';
-    h+='<div style="background:#FFF3CD;border:1px solid #F0C040;border-radius:var(--r);padding:6px 10px;margin-bottom:8px;font-size:11px;font-weight:700;color:#8B6914;">⚠ 合格標準（任一項目不得低於）UGY：5分</div>';
-    h+='<table class="dops-tbl"><thead><tr><th style="text-align:left;min-width:160px;">評核內容</th><th colspan="3" style="background:#C8D8F0;color:#1A3A5C;font-size:9px;">有待加強</th><th colspan="3" style="background:#D8ECD8;color:#2D5A27;font-size:9px;">符合標準</th><th colspan="3" style="background:#F0E8C8;color:#8B6914;font-size:9px;">優良</th><th style="background:#EEE;font-size:9px;">未評</th></tr><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>NA</th></tr></thead><tbody>';
+    h+='<div class="card"><div class="card-head"><div class="card-head-title">'+g.hd+'<span class="t-badge">老師評分</span></div></div><div class="card-body" style="overflow-x:auto;">';
+    h+='<div style="background:var(--teacher-soft);border:1px solid var(--teacher-line);border-radius:var(--r);padding:7px 10px;margin-bottom:8px;font-size:11px;color:var(--teacher2);line-height:1.7;">'+
+       '<strong>1-3</strong> 有待加強　·　<strong>4-6</strong> 符合標準　·　<strong>7-9</strong> 優良　·　<strong>NA</strong> 未評'+
+       '<br><strong>合格標準：任一項目不得低於 5 分</strong></div>';
+    h+='<table class="dops-tbl"><thead><tr><th style="text-align:left;min-width:160px;">評核內容</th><th colspan="10" style="background:var(--teacher-soft);color:var(--teacher2);font-size:9px;font-weight:600;">指導老師評分（1-9 分，NA＝未評）</th></tr><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>NA</th></tr></thead><tbody>';
     g.items.forEach(item=>{
       // 階層縮排輔助：分析編號層級
       function _calcLevel(line){
@@ -11490,7 +11494,7 @@ function buildDOPS(f,d,canT,fkey,canS){
       if(item && typeof item === 'object' && item.h){
         var titleLv = _calcLevel(item.h);
         var titlePad = titleLv * 18;
-        var titleStyle = 'padding-left:'+(titlePad)+'px;font-weight:600;color:#1A5276;background:#E8F1FB;';
+        var titleStyle = 'padding-left:'+(titlePad)+'px;font-weight:700;color:var(--ink2);background:var(--bg-soft);';
         h+='<tr><td class="item-cell" style="'+titleStyle+'" colspan="11">'+item.h+'</td></tr>';
         return;
       }
@@ -11525,18 +11529,18 @@ function buildDOPS(f,d,canT,fkey,canS){
   var gradeHtml2=gradeOpts2.map(function(g){return '<option value="'+g+'" '+(d['score_grade']===g?'selected':'')+'>'+g+'</option>';}).join('');
   var scOC="saveDraftField('"+fid+"','score_grade',this.value)";
   h+='<div class="card"><div class="card-head"><div class="card-head-title">評分等級<span class="t-badge">老師</span></div></div><div class="card-body">';
-  h+='<div style="background:#FFF3CD;border:1px solid #F0C040;border-radius:var(--r);padding:6px 12px;font-size:12px;font-weight:700;color:#8B6914;margin-bottom:10px;">★ UGY 分數需 ≥ 良：80-89分</div>';
+  h+='<div style="background:var(--teacher-soft);border:1px solid var(--teacher-line);border-radius:var(--r);padding:6px 12px;font-size:12px;font-weight:700;color:var(--teacher2);margin-bottom:10px;">★ UGY 分數需 ≥ 良：80-89 分</div>';
   h+='<div class="field"><select data-fid="'+fid+'" data-key="score_grade" data-teacher="1" '+(canT?'':'disabled')+' onchange="'+scOC+'" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:var(--r);font-size:13px;background:'+(canT?'#fff':'var(--cream)')+';">';
   h+='<option value="">請選擇評分等級</option>'+gradeHtml2+'</select></div>';
   h+='</div></div>';
-  // ── 學生區（藍底）──
+  // ── 學生區（松綠底）──
   h+='<div class="card s-card"><div class="card-head"><div class="card-head-title">👤 學生填寫區</div><span class="s-badge" style="background:rgba(255,255,255,.25);color:#fff;border-color:rgba(255,255,255,.4);">學生</span></div><div class="card-body">';
   // 學生自覺技術複雜度
   h+='<div class="field"><label>學生自覺技術複雜度</label><div class="check-group">';
   ['低','中','高'].forEach(function(v2){
     var c2=d['complexity']===v2?'checked':'';
     var o2="APP.formData['"+fid+"']=APP.formData['"+fid+"']||{};APP.formData['"+fid+"']['complexity']='"+v2+"';saveDraftField('"+fid+"','complexity','"+v2+"')";
-    h+='<label class="check-item"><input type="radio" name="'+fid+'_cx" data-fid="'+fid+'" data-key="complexity" '+c2+' onchange="'+o2+'" style="accent-color:#4D7C0F;"> '+v2+'</label>';
+    h+='<label class="check-item"><input type="radio" name="'+fid+'_cx" data-fid="'+fid+'" data-key="complexity" '+c2+' onchange="'+o2+'" style="accent-color:#1F5F4B;"> '+v2+'</label>';
   });
   h+='</div></div>';
   // 學生對此技術操作的心得感受
@@ -11858,7 +11862,7 @@ function buildF15(f,d,canT,fkey,canS){
   const fid=fkey||f.id;
   if(canS===undefined)canS=true;
 
-  /* 單一評分按鈕。role='s' → 學生自評（橄欖綠）；role='t' → 老師評分（酒紅） */
+  /* 單一評分按鈕。role='s' → 學生自評（松綠）；role='t' → 老師評分（赭紅） */
   function rbtn(key,v,role,disabled){
     var cur=(d[key]===v||d[key]==v);
     var selCls=cur?(role==='t'?'sel-t':'sel-s'):'';
@@ -11882,8 +11886,8 @@ function buildF15(f,d,canT,fkey,canS){
       '</div></div><div class="card-body" style="overflow-x:auto;">'+
       '<div style="background:var(--bg-soft);border-radius:var(--r);padding:6px 10px;margin-bottom:8px;font-size:11px;color:var(--ink2);">'+
       '📊 <b>5 優　4 良　3 普　2 差　1 劣</b>　·　每項配分 5 分　·　'+
-      '<span style="color:var(--primary2);font-weight:700;">綠色＝學生自評</span>　'+
-      '<span style="color:var(--teacher);font-weight:700;">酒紅＝指導老師評分（計入成績）</span></div>'+
+      '<span style="color:var(--primary2);font-weight:700;">松綠＝學生自評</span>　'+
+      '<span style="color:var(--teacher);font-weight:700;">赭紅＝指導老師評分（計入成績）</span></div>'+
       '<table class="rating-table" style="min-width:520px;">'+
       '<tr><th style="text-align:left;min-width:220px;">評值項目</th>'+
       '<th style="width:44px;">配分</th>'+
@@ -11893,8 +11897,8 @@ function buildF15(f,d,canT,fkey,canS){
       const tKey=prefix+i, sKey=sPrefix+i;
       s+='<tr><td class="row-label">'+item+'</td>'+
          '<td style="text-align:center;font-weight:600;color:var(--ink3);">5</td>'+
-         '<td style="text-align:center;background:rgba(77,124,15,.05);">'+rgroup(sKey,'s',!canS)+'</td>'+
-         '<td style="text-align:center;background:rgba(159,18,57,.05);">'+rgroup(tKey,'t',!canT)+'</td></tr>';
+         '<td style="text-align:center;background:rgba(31,95,75,.05);">'+rgroup(sKey,'s',!canS)+'</td>'+
+         '<td style="text-align:center;background:rgba(168,69,47,.05);">'+rgroup(tKey,'t',!canT)+'</td></tr>';
     });
     s+='</table><div style="margin-top:8px;font-size:11px;color:var(--ink3);">本段滿分 '+maxScore+' 分。</div></div></div>';
     return s;
@@ -11917,7 +11921,7 @@ function buildF15(f,d,canT,fkey,canS){
   // ── 分數自動計算 ──
   h+=`<div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:12px;font-size:12px;">
     <div style="font-weight:700;color:var(--ink);margin-bottom:8px;">📊 分數自動計算</div>
-    <div style="background:var(--gold-soft);border:1px solid var(--gold2);border-radius:4px;padding:5px 10px;font-size:11px;font-weight:700;color:#6B4E12;margin-bottom:10px;">★ 實習總分數須 ≧ 60 分才算及格（正式成績＝指導老師評分＋加分）</div>
+    <div style="background:var(--gold-soft);border:1px solid var(--gold2);border-radius:4px;padding:5px 10px;font-size:11px;font-weight:700;color:#6B5220;margin-bottom:10px;">★ 實習總分數須 ≧ 60 分才算及格（正式成績＝指導老師評分＋加分）</div>
     <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-end;">
       <div>
         <div style="font-size:11px;color:var(--ink3);margin-bottom:3px;">一、學習態度（25）</div>
@@ -11959,13 +11963,13 @@ function buildF15(f,d,canT,fkey,canS){
     </div>
 
     <!-- ═══ 個人反思區(學生主動書寫,不評分,只屬於學生自己的學習軌跡)═══ -->
-    <div style="margin:18px 0 8px;padding:14px 16px;background:linear-gradient(135deg,#E6F4F1 0%,#F5FBF9 100%);border-left:4px solid #0E7490;border-radius:6px;">
-      <div style="font-size:14px;font-weight:700;color:#0E5C6B;margin-bottom:6px;">📝 個人反思(僅供您自己回顧;不影響成績)</div>
-      <div style="font-size:11.5px;color:#14606E;line-height:1.7;">e-Portfolio 不只是「填表評分」 — 更是您主動建構自己學習歷程的地方。<br>請於本實習階段結束時花 10~15 分鐘真誠書寫;這份反思「沒有正確答案」,寫得越詳細,日後回顧時越有價值。</div>
+    <div style="margin:18px 0 8px;padding:14px 16px;background:linear-gradient(135deg,#F8F1E2 0%,#FCF8EE 100%);border-left:4px solid #8A6A2A;border-radius:6px;">
+      <div style="font-size:14px;font-weight:700;color:#6B5220;margin-bottom:6px;">📝 個人反思(僅供您自己回顧;不影響成績)</div>
+      <div style="font-size:11.5px;color:#7E6128;line-height:1.7;">e-Portfolio 不只是「填表評分」 — 更是您主動建構自己學習歷程的地方。<br>請於本實習階段結束時花 10~15 分鐘真誠書寫;這份反思「沒有正確答案」,寫得越詳細,日後回顧時越有價值。</div>
     </div>
 
-    <div class="field" style="border-left:3px solid #0891B2;padding-left:10px;margin-bottom:12px;">
-      <label style="color:#0E7490;font-weight:600;">💡 一、本階段我學到了什麼?</label>
+    <div class="field" style="border-left:3px solid #A6803C;padding-left:10px;margin-bottom:12px;">
+      <label style="color:#8A6A2A;font-weight:600;">💡 一、本階段我學到了什麼?</label>
       <div style="font-size:11px;color:var(--ink3);line-height:1.6;margin:4px 0 6px;font-style:italic;">具體列舉知識面、技術面、態度面的收穫。例:「學會判讀 RSBI 與 CLT 的臨床意義」、「掌握 SBT 的中止條件」、「學會在病人焦慮時用更耐心的口吻溝通」。</div>
       ${ta(fid,'reflect_learn',5,false)}
     </div>
@@ -11983,7 +11987,7 @@ function buildF15(f,d,canT,fkey,canS){
     </div>
 
     <div class="field" style="border-left:3px solid var(--gold);padding-left:10px;margin-bottom:14px;">
-      <label style="color:#6B4E12;font-weight:600;">🎯 四、下階段我想達成什麼目標?</label>
+      <label style="color:#6B5220;font-weight:600;">🎯 四、下階段我想達成什麼目標?</label>
       <div style="font-size:11px;color:var(--ink3);line-height:1.6;margin:4px 0 6px;font-style:italic;">具體、可達成、有時限的目標(SMART 原則)。例:「下次實習結束前能獨立完成 5 次脫離指標測量」、「能在 5 分鐘內完成一份 ISBAR 簡報」。</div>
       ${ta(fid,'reflect_goal',5,false)}
     </div>
@@ -13208,20 +13212,20 @@ function _buildExamCommon(f, d, fid, mode){
 /* ─── 題庫尚未建置時的友善提示卡（筆試 / 課後測驗共用） ─── */
 function _pendingBankCard(titleText, metaText){
   return '<div class="card" style="border:2px dashed var(--gold2);">' +
-    '<div class="card-head" style="background:linear-gradient(135deg,var(--gold) 0%,#8A6420 100%);">' +
+    '<div class="card-head" style="background:linear-gradient(135deg,var(--gold) 0%,#7E6128 100%);">' +
     '<div class="card-head-title" style="color:#fff;">🛠 題庫建置中</div></div>' +
     '<div class="card-body" style="background:var(--gold-soft);">' +
-    '<div style="font-size:15px;font-weight:700;color:#6B4E12;margin-bottom:8px;">' +
+    '<div style="font-size:15px;font-weight:700;color:#6B5220;margin-bottom:8px;">' +
       escapeExamHtml(titleText) + '</div>' +
-    '<div style="font-size:12px;color:#8A6420;margin-bottom:12px;">' +
+    '<div style="font-size:12px;color:#7E6128;margin-bottom:12px;">' +
       escapeExamHtml(metaText) + '</div>' +
-    '<div style="font-size:13px;line-height:1.9;color:#5C430F;background:#fff;border:1px solid #E6D6A8;' +
+    '<div style="font-size:13px;line-height:1.9;color:#59461C;background:#fff;border:1px solid #E4D6B4;' +
       'border-radius:var(--r);padding:12px 14px;">' +
       '本份測驗的<b>題目尚未上傳</b>，因此暫時無法作答。<br>' +
       '待老師提供題目並由管理員匯入後，本頁會自動顯示完整考卷；' +
       '在此之前您<b>不需要、也無法送出</b>這份表單，請先完成其他表單即可。' +
     '</div>' +
-    '<div style="margin-top:10px;font-size:11px;color:#8A6420;">' +
+    '<div style="margin-top:10px;font-size:11px;color:#7E6128;">' +
       '※ 上方基本資料仍可先行填寫並保存。</div>' +
     '</div></div>';
 }
@@ -13895,7 +13899,7 @@ function renderAdmin(){
             // ★ 失敗時提供兩個救援按鈕,不必整批重清
             failedHtml += '<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">'
               + '<button onclick="retryFailedClearList()" style="padding:5px 12px;background:#DC2626;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">🔁 只重試這 '+r.failedList.length+' 筆</button>'
-              + '<button onclick="verifyFailedClearList()" style="padding:5px 12px;background:#0891B2;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">🔍 驗證雲端是否真的有殘留</button>'
+              + '<button onclick="verifyFailedClearList()" style="padding:5px 12px;background:#A6803C;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">🔍 驗證雲端是否真的有殘留</button>'
               + '<span style="font-size:10px;color:#7F1D1D;align-self:center;">(GAS 偶爾有延遲,常見「驗證後其實是空的」)</span>'
               + '</div>';
           }
@@ -15414,7 +15418,7 @@ async function updateTeacherPwd(card){
   saveConfigToSheets();
 }
 // ===== 班級統整（Cohort）功能：由重症系統移植，配色已改為綠色系 =====
-function _cohColors(){ return ['#2563EB','#DC2626','#059669','#D97706','#7C3AED','#0891B2','#DB2777','#65A30D']; }
+function _cohColors(){ return ['#2563EB','#DC2626','#059669','#D97706','#7C3AED','#A6803C','#DB2777','#65A30D']; }
 function _cohEsc(s){ return (typeof esc==='function') ? esc(String(s==null?'':s)) : String(s==null?'':s); }
 
 /* 取得全班學生清單 [{sid,name,school,intern_start,intern_end,intern_cat}] */
@@ -15619,7 +15623,7 @@ function _cohTbl(headHtml, bodyHtml){
   return '<table style="width:100%;border-collapse:collapse;font-size:12px;margin:4px 0 2px;">'
        + '<thead>'+headHtml+'</thead><tbody>'+bodyHtml+'</tbody></table>';
 }
-function _cohTh(t,extra){ return '<th style="background:#3F6212;color:#fff;padding:6px 8px;border:1px solid #cbd5e1;font-weight:600;text-align:center;'+(extra||'')+'">'+_cohEsc(t)+'</th>'; }
+function _cohTh(t,extra){ return '<th style="background:#164539;color:#fff;padding:6px 8px;border:1px solid #cbd5e1;font-weight:600;text-align:center;'+(extra||'')+'">'+_cohEsc(t)+'</th>'; }
 function _cohTd(t,extra){ return '<td style="padding:5px 8px;border:1px solid #d8dee9;text-align:center;'+(extra||'')+'">'+(t==null?'':t)+'</td>'; }
 function _cohNote(t){ return '<div style="font-size:11px;color:#64748b;margin:2px 0 10px;line-height:1.6;">'+t+'</div>'; }
 function _cohChartBox(svg){ return '<div style="overflow-x:auto;margin:6px 0 4px;-webkit-overflow-scrolling:touch;">'+svg+'</div>'; }
@@ -15646,9 +15650,9 @@ function cohortSections(students){
     var classPct=Math.round(classDone/(totalForms*students.length||1)*100);
     // KPI
     html+='<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">';
-    html+='<div style="flex:1;min-width:110px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:10px 12px;"><div style="font-size:11px;color:#3F6212;">學生人數</div><div style="font-size:22px;font-weight:700;color:#1E3A8A;">'+students.length+'</div></div>';
-    html+='<div style="flex:1;min-width:110px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:10px 12px;"><div style="font-size:11px;color:#3F6212;">每人表單數</div><div style="font-size:22px;font-weight:700;color:#1E3A8A;">'+totalForms+'</div></div>';
-    html+='<div style="flex:1;min-width:110px;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:10px 12px;"><div style="font-size:11px;color:#047857;">全班整體完成率</div><div style="font-size:22px;font-weight:700;color:#047857;">'+classPct+'%</div></div>';
+    html+='<div style="flex:1;min-width:110px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:10px 12px;"><div style="font-size:11px;color:#164539;">學生人數</div><div style="font-size:22px;font-weight:700;color:#1E3A8A;">'+students.length+'</div></div>';
+    html+='<div style="flex:1;min-width:110px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:10px 12px;"><div style="font-size:11px;color:#164539;">每人表單數</div><div style="font-size:22px;font-weight:700;color:#1E3A8A;">'+totalForms+'</div></div>';
+    html+='<div style="flex:1;min-width:110px;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:10px 12px;"><div style="font-size:11px;color:#2E7D5B;">全班整體完成率</div><div style="font-size:22px;font-weight:700;color:#2E7D5B;">'+classPct+'%</div></div>';
     html+='</div>';
     // per-student progress bars
     html+='<div style="margin-top:4px;">';
@@ -15679,7 +15683,7 @@ function cohortSections(students){
         var topCodes=dims.filter(function(c){ return sc[c]===maxv; });
         topTxt=(maxv>0&&topCodes.length)?topCodes.map(function(c){return F16_STYLES[c].zh;}).join('、'):'—';
       } else { topTxt='未完成'; }
-      var inner='<div style="font-weight:700;font-size:14px;color:#3F6212;">'+_cohEsc(s.name)+'</div>'
+      var inner='<div style="font-weight:700;font-size:14px;color:#164539;">'+_cohEsc(s.name)+'</div>'
         +'<div style="font-size:12px;font-weight:700;margin:2px 0 2px;color:'+(sc?'#7F1D1D':'#bbb')+';">主要風格：'+_cohEsc(topTxt)+'</div>'
         +(sc?buildF16RadarSVG(sc,200,{pad:true,showScores:true}):'<div style="height:170px;line-height:170px;color:#bbb;font-size:13px;">（未完成）</div>');
       html+='<td style="width:50%;text-align:center;vertical-align:top;padding:4px;page-break-inside:avoid;border:1px solid #e2e8f0;">'+inner+'</td>';
@@ -15935,14 +15939,14 @@ function cohortSections(students){
         body+=row+'</tr>';
       });
       // 每項全班平均
-      var avgRow='<tr style="background:#F2F1E7;">'+_cohTd('<b>各項全班平均</b>','font-size:11px;');
+      var avgRow='<tr style="background:#F1EDE4;">'+_cohTd('<b>各項全班平均</b>','font-size:11px;');
       items.forEach(function(_,i){
         var col=students.map(function(s){var v=cohortForm(fid,s.sid)['f06_'+i];var n=parseInt(v,10);return (v!==undefined&&v!==''&&v!=null&&!isNaN(n))?n:null;});
         var a=col.filter(function(x){return x!=null;});
         avgRow+=_cohTd(a.length?(a.reduce(function(x,y){return x+y;},0)/a.length).toFixed(1):'—','text-align:center;font-size:11px;');
       });
       avgRow+=_cohTd('','background:#F1F5FB;')+'</tr>';
-      return '<div style="font-size:13px;font-weight:700;color:#3F6212;margin:10px 0 4px;">'+_cohEsc(subjLabel)+'</div>'+_cohTbl(head,body+avgRow);
+      return '<div style="font-size:13px;font-weight:700;color:#164539;margin:10px 0 4px;">'+_cohEsc(subjLabel)+'</div>'+_cohTbl(head,body+avgRow);
     }
     var html='';
     html+=_cohNote('CbD（病例導向討論）共 7 項評核，每項 1–9 分（1–3 有待加強／4–6 合乎標準／7–9 優良；<b>UGY 每項需 ≥5</b>，低於 5 以紅字標示）。最右欄為該生平均、最下列為各項全班平均。');
@@ -15979,8 +15983,8 @@ function cohortSections(students){
       var aA=_cohAvg(students.map(function(s){var r=f360(fid,s.sid);return r?r.att:null;}));
       var aC=_cohAvg(students.map(function(s){var r=f360(fid,s.sid);return r?r.clin:null;}));
       var aT=_cohAvg(students.map(function(s){var r=f360(fid,s.sid);return r?r.total:null;}));
-      body+='<tr style="background:#F2F1E7;">'+_cohTd('<b>全班平均</b>')+_cohTd(aA==null?'—':'<b>'+aA+'</b>','text-align:center;')+_cohTd(aC==null?'—':'<b>'+aC+'</b>','text-align:center;')+_cohTd(aT==null?'—':'<b>'+aT+'</b>','text-align:center;background:#F1F5FB;')+'</tr>';
-      return '<div style="font-size:13px;font-weight:700;color:#3F6212;margin:10px 0 4px;">'+_cohEsc(subjLabel)+'</div>'+_cohTbl(head,body);
+      body+='<tr style="background:#F1EDE4;">'+_cohTd('<b>全班平均</b>')+_cohTd(aA==null?'—':'<b>'+aA+'</b>','text-align:center;')+_cohTd(aC==null?'—':'<b>'+aC+'</b>','text-align:center;')+_cohTd(aT==null?'—':'<b>'+aT+'</b>','text-align:center;background:#F1F5FB;')+'</tr>';
+      return '<div style="font-size:13px;font-weight:700;color:#164539;margin:10px 0 4px;">'+_cohEsc(subjLabel)+'</div>'+_cohTbl(head,body);
     }
     var html='';
     html+=_cohNote('360 度評估分態度與臨床智能兩面向：態度基本分 80（<b>及格 ≥80</b>）、臨床智能基本分 75（<b>及格 ≥75</b>），換算總分為兩者各半、<b style="color:#DC2626;">及格 ≥70</b>。未達標以紅字標示。');
@@ -16072,7 +16076,7 @@ function cohortSections(students){
     var head='<tr>'+_cohTh('表單')+names.map(function(n){return _cohTh(n,'writing-mode:initial;');}).join('')+'</tr>';
     var body='';
     groups.forEach(function(grp){
-      body+='<tr><td colspan="'+(students.length+1)+'" style="background:#E8EEF7;color:#3F6212;font-weight:700;font-size:11px;padding:4px 8px;border:1px solid #d8dee9;">'+_cohEsc(grp.label)+'</td></tr>';
+      body+='<tr><td colspan="'+(students.length+1)+'" style="background:#E8EEF7;color:#164539;font-weight:700;font-size:11px;padding:4px 8px;border:1px solid #d8dee9;">'+_cohEsc(grp.label)+'</td></tr>';
       grp.ids.forEach(function(id){
         var f=findForm(id); if(!f) return;
         var short=f.name.length>18?f.name.slice(0,18)+'…':f.name;
@@ -16370,12 +16374,12 @@ function downloadCohortPDF(sectionId){
   h+='@page{size:A4 landscape;margin:1.2cm;} ';
   h+='body{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;color:#1A1612;margin:0;font-size:11pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;} ';
   h+='*{-webkit-print-color-adjust:exact;print-color-adjust:exact;} ';
-  h+='.header{text-align:center;border-bottom:2px solid #3F6212;padding-bottom:10px;margin-bottom:14px;} ';
-  h+='.hosp{font-size:10pt;color:#3F6212;letter-spacing:1.5px;font-weight:600;} ';
+  h+='.header{text-align:center;border-bottom:2px solid #164539;padding-bottom:10px;margin-bottom:14px;} ';
+  h+='.hosp{font-size:10pt;color:#164539;letter-spacing:1.5px;font-weight:600;} ';
   h+='.title{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;font-size:18pt;font-weight:600;margin:6px 0 4px;letter-spacing:2px;} ';
   h+='.sub{font-size:9pt;color:#888;} ';
   h+='.sec{margin-top:14px;} .sec.brk{page-break-before:always;} .secpage.brk{page-break-before:always;} ';
-  h+='.sec-h{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;background:#3F6212;color:#fff;font-weight:600;padding:6px 12px;font-size:12pt;letter-spacing:1px;margin-bottom:8px;} ';
+  h+='.sec-h{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;background:#164539;color:#fff;font-weight:600;padding:6px 12px;font-size:12pt;letter-spacing:1px;margin-bottom:8px;} ';
   h+='table{page-break-inside:auto;} tr{page-break-inside:avoid;} svg{page-break-inside:avoid;} ';
   h+='.cts-tight td,.cts-tight th{padding-top:2px!important;padding-bottom:2px!important;line-height:1.25;} .cts-tight .note,.cts-tight p{margin:2px 0!important;} ';
   h+='</style></head><body>';
