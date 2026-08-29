@@ -437,7 +437,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .card-body{padding:1.2rem;}
 
 /* ─── 統一配色標準 ───
-   學生區（藍）：邊框 #93C5FD、底色 #F0F7FF、標題列漸層 #3B82F6→#1D4ED8（白字）
+   學生區（松綠）：邊框 var(--primary-line)、底色 var(--primary-soft)、標題列漸層 var(--primary)→var(--primary2)（白字）
    老師區（紅）：邊框 #FCA5A5、底色 #FFF5F5、標題列漸層 #DC2626→#991B1B（白字）
    這個色組是全站基準，所有「學生／老師」區塊都遵循，避免深淺不一。 */
 
@@ -493,6 +493,9 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(31,95,75,.14);}
 .field input:disabled,.field textarea:disabled,.field select:disabled{background:var(--bg-soft);color:var(--ink3);cursor:not-allowed;border-color:var(--border2);}
 .field textarea{resize:vertical;min-height:72px;line-height:1.6;}
+/* 讓右下角的縮放握把在各瀏覽器都看得見 */
+textarea{resize:vertical !important;}
+.field textarea:hover{border-color:var(--primary-line);}
 .t-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:#F6E4DD;color:var(--teacher2);border:1px solid var(--teacher-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
 .s-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
 .m-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;background:linear-gradient(90deg,var(--blue-soft) 0%,#F6E4DD 100%);color:var(--teacher2);border:1px solid var(--teacher-line);margin-left:6px;font-weight:600;letter-spacing:.2px;}
@@ -642,7 +645,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 
 /* ─── EPA levels ─── */
 .epa-level{display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;margin-bottom:8px;transition:all .2s;background:#fff;}
-.epa-level.sel{border-color:var(--primary);background:linear-gradient(135deg,var(--primary-soft) 0%,#EFF6FF 100%);box-shadow:0 2px 8px rgba(37,99,235,.12);}
+.epa-level.sel{border-color:var(--primary);background:linear-gradient(135deg,var(--primary-soft) 0%,#F4FAF7 100%);box-shadow:0 2px 8px rgba(31,95,75,.12);}
 .epa-level:hover:not([data-locked]):not(.sel){border-color:var(--primary-line);background:#FCFAF6;transform:translateX(2px);}
 .epa-level[data-locked]{cursor:not-allowed;opacity:0.6;pointer-events:none;background:var(--bg-soft);}
 .epa-lv-num{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);}
@@ -966,7 +969,7 @@ input[type="date"]{
     <div class="login-header">
       <div class="hosp">TAICHUNG VETERANS GENERAL HOSPITAL</div>
       <div class="title">胸腔部呼吸治療科<br>實習學習護照 e-Portfolio</div>
-      <div class="sub">長期呼吸治療學實習系統　<span style="color:#1F5F4B;font-weight:700;">v1.0.3</span></div>
+      <div class="sub">長期呼吸治療學實習系統　<span style="color:#1F5F4B;font-weight:700;">v1.0.4</span></div>
     </div>
     <div class="login-body">
       <div class="role-tabs">
@@ -1048,7 +1051,7 @@ input[type="date"]{
     <div class="topbar-left">
       <div>
         <div class="topbar-title">臺中榮總 — e-Portfolio</div>
-        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸治療學實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.3 · 2026.08</span></div>
+        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸治療學實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.4 · 2026.08</span></div>
       </div>
     </div>
     <div class="topbar-right">
@@ -5499,21 +5502,21 @@ function lockStudentFields(){
       var parentLabel = el.closest('label');
       if(parentLabel && !parentLabel.hasAttribute('data-student-label-styled')){
         parentLabel.setAttribute('data-student-label-styled','1');
-        parentLabel.style.borderLeft = '3px solid #3B82F6';
-        parentLabel.style.background = 'rgba(59,130,246,0.06)';
+        parentLabel.style.borderLeft = '3px solid var(--primary)';
+        parentLabel.style.background = 'rgba(31,95,75,0.07)';
         parentLabel.style.paddingLeft = '6px';
         parentLabel.style.borderRadius = '4px';
         parentLabel.title = _roTip;
       }
       if(isSelectOrDate){
-        el.style.borderLeft = '3px solid #3B82F6';
+        el.style.borderLeft = '3px solid var(--primary)';
         el.style.background = 'var(--cream)';
       }
     } else {
       // text / number / textarea：用 readonly，老師仍可選取複製內容
       el.readOnly = true;
       el.title = _roTip;
-      el.style.borderLeft = '3px solid #3B82F6';
+      el.style.borderLeft = '3px solid var(--primary)';
       el.style.background = 'var(--cream)';
       el.style.cursor = 'default';
       // readonly 仍可 focus；點下去給個提示，避免老師以為系統壞了
@@ -5534,7 +5537,7 @@ function lockStudentFields(){
     /* ★ FIX v19.5：改為完全不可點（原本是點擊跳 confirm）。
        不用 disabled 屬性，是為了保留原本的選中／未選中配色，
        老師仍看得出學生選了哪一格。 */
-    btn.style.borderLeft = '3px solid #3B82F6';
+    btn.style.borderLeft = '3px solid var(--primary)';
     btn.style.cursor = 'not-allowed';
     btn.style.opacity = '0.85';
     btn.title = '🔒 此為學生填寫的欄位，老師端唯讀';
@@ -10793,7 +10796,7 @@ function buildCbD(f,d,canT,fkey,canS){
   let h=basicInfoCard(fid,d,
     '<div class="field"><label>病床號</label>'+fi(fid,'bed','text',false)+'</div>'+
     '<div class="field"><label>病人名</label>'+fi(fid,'pt_name','text',false)+'</div>'+
-    '<div class="field"><label>主診斷</label>'+fi(fid,'case_dx','text',false)+'</div>'+
+    '<div class="field"><label>主診斷</label>'+ta(fid,'case_dx',2,false,'請填寫主診斷…')+'</div>'+
     '<div class="field"><label>病情複雜度</label><div class="check-group">'+cxBtns+'</div></div>');
   // 評量說明列
   h+='<div class="card"><div class="card-head"><div class="card-head-title">評量項目<span class="t-badge">老師評分</span></div></div><div class="card-body" style="overflow-x:auto;">';
@@ -10982,7 +10985,7 @@ function buildF08(f,d,canT,fkey,canS){
   if(canS===undefined)canS=true;
   const profs=['西醫','牙醫','中醫','藥事','醫事放射','醫事檢驗','牙體技術','護理','營養','助產','聽力','語言','物理','職能','臨床心理','諮商心理','呼吸治療'];
   let h=basicInfoCard(fid,d,`<div class="field"><label>會議類別</label><div class="check-group">${['醫病共享決策（Shared Decision Making）'].map(v=>`<label class="check-item"><input type="radio" name="f08_cat" ${d['cat']===v?'checked':''} onchange="APP.formData['${fid}']=APP.formData['${fid}']||{};APP.formData['${fid}']['cat']='${v}'" style="accent-color:var(--gold);"> ${v}</label>`).join('')}</div></div>
-    <div class="field"><label>主診斷</label>${fi(fid,'diagnosis','text',false)}</div>
+    <div class="field"><label>主診斷</label>${ta(fid,'diagnosis',2,false,'請填寫主診斷…')}</div>
     <div class="field"><label>參加職類</label><div class="check-group">${profs.map(v=>`<label class="check-item"><input type="checkbox" ${d['prof_'+v]?'checked':''} onchange="APP.formData['${fid}']=APP.formData['${fid}']||{};APP.formData['${fid}']['prof_${v}']=this.checked" style="accent-color:var(--gold);"> ${v}</label>`).join('')}</div></div>`);
   h+=`<div class="card"><div class="card-head"><div class="card-head-title">全人討論（包含2個以上面向）<span style="font-size:11px;font-weight:600;color:#FEF3C7;background:rgba(245,158,11,.35);padding:2px 8px;border-radius:10px;margin-left:8px;border:1px solid rgba(254,243,199,.5);">⚠ 若無建議，請填寫「無」</span></div></div><div class="card-body">
     ${[['生理(Body)','疾病之檢查、檢驗、診斷與治療'],['心理(Mind)','對疾病的認知、自我照護的技能與態度'],['靈性(Spirit)','信仰、心靈關懷，精神上的支持與安慰'],['社會(Social)','家人協助、轉介服務、出院準備']].map(([t,hint])=>`<div class="field"><label>${t}<span style="font-size:10px;color:var(--ink3);margin-left:4px;">${hint}</span></label>${ta(fid,'discuss_'+t[0],2,false)}</div>`).join('')}
@@ -11004,7 +11007,7 @@ function buildF09(f,d,canT,fkey,canS){
   const fid=fkey||f.id;
   if(canS===undefined)canS=true;
   const profs=['西醫','牙醫','中醫','藥事','醫事放射','醫事檢驗','牙體技術','護理','營養','助產','聽力','語言','物理','職能','臨床心理','諮商心理','呼吸治療'];
-  let h=basicInfoCard(fid,d,`<div class="field"><label>主診斷</label>${fi(f.id,'diagnosis','text',false)}</div>
+  let h=basicInfoCard(fid,d,`<div class="field"><label>主診斷</label>${ta(f.id,'diagnosis',2,false,'請填寫主診斷…')}</div>
     <div class="field"><label>參加職類</label><div class="check-group">${profs.map(v=>`<label class="check-item"><input type="checkbox" ${d['prof_'+v]?'checked':''} onchange="APP.formData['${fid}']=APP.formData['${fid}']||{};APP.formData['${fid}']['prof_${v}']=this.checked" style="accent-color:var(--gold);"> ${v}</label>`).join('')}</div></div>`);
   h+=`<div class="card"><div class="card-head"><div class="card-head-title">團隊照護需求討論</div><span class="s-badge" style="background:rgba(255,255,255,.25);color:#fff;border-color:rgba(255,255,255,.4);">學生填寫</span></div><div class="card-body">
     <div class="field"><label>1. 身為呼吸治療師，我的專業可以提供這個病人：</label>${ta(f.id,'c1',3,false)}</div>
@@ -11484,11 +11487,9 @@ function buildDOPS(f,d,canT,fkey,canS){
     g.items.forEach(item=>{
       // 階層縮排輔助：分析編號層級
       function _calcLevel(line){
-        var m = String(line).trim().match(/^(\d+)(\.\d+)?(\.\d+)?/);
+        var m = String(line).trim().match(/^(\d+(?:\.\d+)*)/);
         if(!m) return 0;
-        if(m[3]) return 2;       // 7.4.1 → 三級
-        if(m[2]) return 1;       // 9.1   → 二級
-        return 0;                // 9.    → 主項
+        return (m[1].match(/\./g) || []).length;   // 小數點數量＝層級
       }
       // 純標題 item（如 {h:'7. 技術執行步驟'}）：只顯示文字，不評分、不消耗 itemIdx
       if(item && typeof item === 'object' && item.h){
@@ -11499,17 +11500,29 @@ function buildDOPS(f,d,canT,fkey,canS){
         return;
       }
       var key=f.id+'_i'+(++itemIdx);
-      // 一般 item：依編號層級縮排
+      /* ── 一般 item：逐行解析編號並依層級縮排 ──
+         支援的編號寫法：'7.'、'7.1'、'7.1.'、'7.4.2'、'9.2' …
+         層級＝編號中的小數點數量：
+           7      → 第 0 層（不縮排）
+           7.1    → 第 1 層（縮 18px）
+           7.4.2  → 第 2 層（縮 36px）
+         同一格內若有多行（用 \n 分隔），每一行各自判斷層級，
+         因此 7.4 的子項 7.4.1～7.4.5 會全部對齊。                     */
       var lines = String(item).split('\n');
-      var _m0 = String(lines[0]).match(/^(\d+(?:\.\d+)*\.)\s*([\s\S]*)$/);
-      var itemDisplay;
-      if(_m0){
-        var _numTok=_m0[1];
-        var _body=[_m0[2]].concat(lines.slice(1)).join('<br>');
-        itemDisplay='<div style="display:flex;align-items:flex-start;gap:.35em;"><span style="flex:0 0 auto;white-space:nowrap;">'+_numTok+'</span><span style="flex:1 1 auto;min-width:0;">'+_body+'</span></div>';
-      } else {
-        itemDisplay=lines.join('<br>');
-      }
+      var itemDisplay = lines.map(function(ln){
+        var txt = String(ln);
+        var m = txt.match(/^\s*(\d+(?:\.\d+)*)\.?\s+([\s\S]*)$/);
+        if(!m) return '<div>'+txt+'</div>';
+        var numTok = m[1];                                   // 例如 '7.4.2'
+        var body   = m[2];
+        var level  = (numTok.match(/\./g) || []).length;      // 小數點數量＝層級
+        var pad    = level * 18;
+        var numW   = (level >= 2) ? '3.2em' : (level === 1 ? '2.4em' : '1.6em');
+        return '<div style="display:flex;align-items:flex-start;gap:.3em;padding-left:'+pad+'px;'+
+               (level>0?'color:var(--ink2);':'font-weight:600;')+'">'+
+               '<span style="flex:0 0 '+numW+';white-space:nowrap;">'+numTok+'</span>'+
+               '<span style="flex:1 1 auto;min-width:0;">'+body+'</span></div>';
+      }).join('');
       h+='<tr><td class="item-cell">'+itemDisplay+'</td>';
       [1,2,3,4,5,6,7,8,9,'NA'].forEach(function(v){
         var sel=(d[key]==v||d[key]===String(v))?'sel':'';
