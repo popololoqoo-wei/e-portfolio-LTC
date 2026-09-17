@@ -2563,7 +2563,7 @@ const FORMS=[
 /* ═══════════════════════════════════════════════════════════════════
    長期呼吸治療學實習 — 筆試考題（前測 / 後測共用）
    ───────────────────────────────────────────────────────────────────
-   ★ 題庫尚未建置 ★
+   ★ 題庫：115學年度高醫長照實習考題（已建置）★
    每題 4 分、共 25 題（總分 100 分）、及格 60 分。
    日後補題目時，只要把 25 個下列格式的物件依序放進 EXAM_QUESTIONS：
 
@@ -2581,6 +2581,56 @@ const FORMS=[
    ※ 三個陣列長度必須一致，其餘程式碼完全不需更動。
    ═══════════════════════════════════════════════════════════════════ */
 const EXAM_QUESTIONS = [
+  { q:"病人接受呼吸器通氣支持在多少小時內，比較容易成功脫離呼吸器？",
+    options:{ A:"96", B:"72", C:"120", D:"144" } },
+  { q:"有關病人是否適合接受長期使用居家呼吸器之呼吸器設定條件評估（criteria），下列何者為適合下轉的氧氣設定濃度（FiO2）標準？",
+    options:{ A:"FiO2 ≦30％", B:"FiO2 ≦35％", C:"FiO2 ≦40％", D:"FiO2 ≦50％" } },
+  { q:"慢性阻塞性肺病（COPD）病患使用長期氧氣治療，常用的氧氣濃度範圍通常在：",
+    options:{ A:"21％～28％", B:"24％～35％", C:"28％～40％", D:"35％～50％" } },
+  { q:"慢性阻塞性肺病（COPD）穩定期的病人，無鬱血性心衰竭及肺動脈高壓，其休息狀態之血氧（PaO2）小於或等於多少mm Hg時，需長期氧氣治療（long term oxygen therapy）？",
+    options:{ A:"55", B:"56", C:"58", D:"59" } },
+  { q:"39 歲肌肉強直症（myotonic dystrophy）男性病人，過去一年呼吸費力問題日漸嚴重。他的肺活量（vital capacity）為預測值的40％，動脈血氣體分析發現PaCO2為55 mm Hg。若欲使用非侵襲性呼吸器（noninvasive ventilator），下列設定何者最適合？",
+    options:{ A:"continuous positive airway pressure（CPAP）設定 10 cm H2O", B:"continuous positive airway pressure（CPAP）設定 5 cm H2O", C:"inspiratory positive airway pressure（IPAP）設定 14 cm H2O，expiratory positive airway pressure（EPAP）設定4 cm H2O", D:"inspiratory positive airway pressure（IPAP）設定 14 cm H2O，expiratory positive airway pressure（EPAP）設定10 cm H2O" } },
+  { q:"有關慢性阻塞性肺病的病人進行肺復健之運動訓練規劃，下列何者錯誤？",
+    options:{ A:"運動訓練應該包括下列三種：伸展和柔韌（stretching and flexibility）運動、增強肌力（strengthening）運動和耐力（endurance）運動", B:"復健運動訓練是以上肢運動為主", C:"上肢運動訓練可能惡化病人呼吸困難的症狀", D:"起始的運動訓練設計應該讓病人在沒有不適的情況下完成" } },
+  { q:"有關慢性阻塞性肺病（COPD）病人肺復健治療，下列敘述何者錯誤？",
+    options:{ A:"中度到重度的COPD病人應該積極地進行肺復健計畫", B:"肺復健計畫可以改善病人的臨床症狀與運動耐受力，也可以降低病人的焦慮與憂鬱", C:"完整的肺復健計畫應該包含運動訓練、教育與心理支持等內容", D:"目前無任何證據顯示肺復健可以改善COPD病人的生活品質" } },
+  { q:"在使用呼吸器病人給與支氣管擴張劑治療的方法、作用機轉與副作用，下列敘述何者錯誤？",
+    options:{ A:"霧化吸入（nebulizer）是常見的給藥方式", B:"乙二型交感神經刺激劑（β2-agonist）激活平滑肌細胞表面的β2受體", C:"抗膽鹼藥物抑制迷走神經，激活乙醯膽鹼與平滑肌細胞的受體結合", D:"乙二型交感神經刺激劑（β2-agonist）可能導致心跳加快" } },
+  { q:"關於居家非侵襲性呼吸器介面副作用與處理方法，下列何者最不適當？",
+    options:{ A:"針對噁心及腹脹的使用口鼻罩病人，建議放置鼻胃管，以降低發生嗆吸（aspiration）的風險", B:"使用鼻罩病人發生鼻樑紅腫、壓瘡、結膜炎時，建議適當密合、調整頭帶鬆緊度，或是更換介面種類", C:"建立合適警報系統以保障病人安全，能即時偵測使用口咬器病人之管路意外脫落", D:"使用口鼻罩病人發生粉刺樣皮疹（acneiform rash），建議使用全臉罩" } },
+  { q:"有關居家型呼吸器基本配備，下列何者最為必要？",
+    options:{ A:"靈敏度控制", B:"吸入氧氣濃度達100％", C:"強制機械通氣速率（mandatory rate）", D:"吐氣末正壓" } },
+  { q:"有關非侵襲性正壓通氣（NPPV）臨床治療的敘述，下列何者錯誤？",
+    options:{ A:"不適用於高碳酸血症呼吸衰竭的病人", B:"低血氧性呼吸衰竭的病人需評估後選用", C:"神經肌肉疾病導致呼吸衰竭的病人可優先選用", D:"慢性阻塞性肺病（COPD）急性惡化的病人可優先選用" } },
+  { q:"下列何項是強制性呼吸和自發性呼吸交互出現的呼吸器通氣模式？",
+    options:{ A:"持續性強制通氣（continuous mandatory ventilation）", B:"間歇性強制通氣（intermittent mandatory ventilation）", C:"持續性自主通氣（continuous spontaneous ventilation）", D:"雙控制通氣（dual control ventilation）" } },
+  { q:"關於自主呼吸試驗（spontaneous breathing trial, SBT），下列敘述何者錯誤？",
+    options:{ A:"SBT 可以採用下列任一方法進行：low level CPAP（5 cm H2O）、low level of PSV（5～8 cm H2O）或 T-piece", B:"研究顯示：當病人能夠耐受 30～120 分鐘的 SBT 時，有 77％～85％病人可以成功脫離呼吸器並進行拔管", C:"研究顯示：各種 SBT 的方法中，T-piece 比 low level of PSV 更能縮短呼吸器使用時間和 ICU 住院時間", D:"不必要地延長失敗的 SBT，會導致肌肉疲勞、血液動力學不穩及氣體交換惡化" } },
+  { q:"呼吸器依賴病人接受氣切手術，其影響不包含下列何者？",
+    options:{ A:"改善病人生活品質", B:"若病情許可，可以經口進食", C:"要清除氣管分泌物，抽痰比較有效率", D:"增加鎮靜劑的使用" } },
+  { q:"病人進行自發性呼吸測試以脫離呼吸器時，若出現下列何種情況應讓病人接回呼吸器休息？",
+    options:{ A:"收縮血壓低於90 mm Hg", B:"呼吸次數26次／分，比先前快5次／分", C:"心跳105次／分，比先前快17次／分", D:"脈衝血氧飽和濃度（SpO2）90%，比先前降低5%" } },
+  { q:"下列有關呼吸治療師引導之呼吸器脫離計畫的敘述，何者正確？\n①比單一病人特定醫囑的脫離過程，所需時間較短\n②因呼吸治療師較醫師了解呼吸器應用，所以縮短呼吸器脫離時間\n③呼吸治療師引導呼吸器脫離計畫執行成效仰賴呼吸治療師過去經驗\n④以呼吸治療師引導的呼吸器脫離下，病人產生呼吸器相關併發症較少",
+    options:{ A:"①②③④", B:"僅①②④", C:"僅①③④", D:"僅①④" } },
+  { q:"有關 P0.1脫離指標的敘述，下列何者錯誤？",
+    options:{ A:"P0.1是將呼吸道封閉阻塞（airway occlusion）後 100 毫秒（ms）所測到的吸氣壓力", B:"P0.1與用力無關（effort-independent）", C:"P0.1與中樞通氣驅力（central respiratory drive）相關", D:"P0.1數值 > -5 cm H2O (如 -3 cm H2O)時，代表呼吸功增加" } },
+  { q:"傳統呼吸器脫離方法中，自主呼吸測試逐漸廣為使用，為減少由呼吸器管路所增加的額外負擔，使用執行模式不包括：",
+    options:{ A:"不接呼吸器用傳統組裝T-piece", B:"使用呼吸器的持續氣道正壓5 cm H2O模式", C:"使用呼吸器的壓力支持5～8 cm H2O模式", D:"使用呼吸器的比例輔助通氣30%模式" } },
+  { q:"下列關於淺快呼吸指數用於呼吸器脫離參數的敘述，何者錯誤？",
+    options:{ A:"是以每分鐘呼吸次數除以潮氣容積（單位為公升）計算而得", B:"呼吸器使用越久，尤其是超過3週，所測得準確度越高", C:"年齡越大，準確度會降低", D:"需在1分鐘以無支持性自發呼吸狀況下測量，在使用壓力支持模式下測得，準確度將會降低" } },
+  { q:"病人使用呼吸器壓力支持型通氣模式，吸氣壓設定為14 cm H2O ，吐氣末正壓設定為8 cm H2O，低吐氣末正壓警報響起，下列處置何者正確？\n①低吐氣末正壓警報設定為2 cm H2O\n②低吐氣末正壓警報設定為5 cm H2O\n③確定管路是否有漏氣\n④排除呼吸器管路積水",
+    options:{ A:"①③", B:"②③", C:"①④", D:"②④" } },
+  { q:"病人已通過呼吸器脫離訓練，下列何者不是移除氣管內管失敗的原因？",
+    options:{ A:"拔管後上呼吸道水腫，造成呼吸道阻塞", B:"咳嗽力氣太弱，無法保持呼吸道暢通", C:"病人太緊張，無法通過快淺呼吸指標", D:"痰太多，病人無法有效咳出" } },
+  { q:"有關巴斯德消毒法（Pasteurizarion），下列敘述何者正確？",
+    options:{ A:"72℃潮濕加熱（moisture heat）15秒", B:"63℃熱水加熱（water bath）15分鐘", C:"無法殺死HIV病毒", D:"可殺死各種細菌及病毒" } },
+  { q:"下列何者非常用之呼吸器脫離方式？",
+    options:{ A:"自發呼吸嘗試（spontaneous breathing trials, SBT）", B:"同步間歇性強制型通氣（synchronized intermittent mandatory ventilation, SIMV）", C:"壓力控制通氣（pressure control ventilation）", D:"壓力支持通氣（pressure support ventilation）" } },
+  { q:"下列何者為脫離呼吸器時，使用自發呼吸嘗試（spontaneous breathing trial, SBT）最合適的期間？",
+    options:{ A:"0.5～2小時", B:"3～6小時", C:"18～24小時", D:"10～12 小時" } },
+  { q:"呼吸器脫離指標中的rapid shallow breathing index（f/VT）數值多少為預測呼吸器脫離成功的指標？",
+    options:{ A:"＞20", B:"＞105", C:"＜105", D:"＞10" } }
 ];
 const EXAM_PER_QUESTION_SCORE = 4;
 const EXAM_PASS_SCORE = 60;
@@ -2591,9 +2641,34 @@ const EXAM_PASS_SCORE = 60;
    失去學習意義。改為「前端 fallback」：
    - 若 GAS 後端可用且回傳 review，優先使用後端版本（仍維持 GAS 防作弊機制）。
    - 若後端不可用或無回傳 review，則使用此前端版本，至少可顯示正解與解析給學生對照。
-   ※ 題目來源：台灣考選部「呼吸治療師」歷屆高考公開試題與標準答案。
+   ※ 題目來源：115學年度高醫長照實習考題（正解依原題庫答案，解析為補充說明）。
 */
 const EXAM_ANSWERS = [
+  { answer:"B", explanation:"正解 (B) 72 小時。\n一般認為機械通氣時間越短、越早開始評估脫離，成功率越高；使用呼吸器在 72 小時內的病人，呼吸肌廢用性萎縮（VIDD）與呼吸器相關併發症較少，較容易成功脫離。超過此時間，脫離難度與延長機械通氣（PMV）的風險逐漸增加，因此應每日評估是否可進行自主呼吸試驗。" },
+  { answer:"C", explanation:"正解 (C) FiO2 ≦40％。\n病人要下轉至呼吸照護病房或居家使用呼吸器，需處於臨床穩定狀態，常用條件包括：FiO2 ≦ 40%、PEEP ≦ 8（部分準則 ≦ 5–8）cm H2O、血氧可維持 SpO2 ≧ 90%，且無需頻繁調整設定。FiO2 過高代表氧合仍不穩定，居家氧氣設備也難以穩定提供高濃度氧氣。" },
+  { answer:"B", explanation:"正解 (B) 24％～35％。\nCOPD 病人多有慢性二氧化碳滯留，其呼吸驅動部分依賴低血氧刺激；給予過高濃度氧氣可能造成 V/Q 失衡惡化、Haldane 效應及通氣下降，導致 PaCO2 上升。故採「低流量、控制性」給氧（如鼻導管 1–2 L/min 或 24–35% 的 Venturi mask），目標 SpO2 88–92%。" },
+  { answer:"A", explanation:"正解 (A) 55 mm Hg。\n依 GOLD 指引，穩定期 COPD 需長期氧氣治療（每日 ≧ 15 小時）的條件：\n① 休息時 PaO2 ≦ 55 mm Hg 或 SaO2 ≦ 88%；\n② PaO2 56–59 mm Hg 或 SaO2 89%，且合併肺動脈高壓、鬱血性心衰竭造成的周邊水腫或血容比 > 55%（紅血球增多症）。\n本題已排除心衰竭與肺高壓，故切點為 55 mm Hg。" },
+  { answer:"C", explanation:"正解 (C) IPAP 14／EPAP 4 cm H2O。\n神經肌肉疾病造成的是「通氣不足」（限制性、高碳酸血症），需要的是吸氣輔助來增加潮氣容積，而非維持肺泡張開。\n‧CPAP（A、B）沒有吸吐氣壓力差，無法增加通氣量，不能改善 CO2 滯留。\n‧通氣輔助量取決於壓力差（IPAP − EPAP）：C 的壓力差為 10 cm H2O，能有效增加潮氣容積；D 僅 4 cm H2O，輔助不足，且此類病人肺部本身無需高 EPAP。" },
+  { answer:"B", explanation:"正解 (B)（錯誤敘述）。\n肺復健的運動訓練以「下肢耐力訓練」為核心（如步行、固定式腳踏車），是改善運動耐受力證據最強的項目；上肢訓練為輔助，而非主軸。\n‧A：完整訓練應涵蓋伸展柔軟度、肌力、耐力三類。\n‧C：上肢無支撐的活動會動用輔助呼吸肌，易使 COPD 病人呼吸困難加劇，故須循序漸進。\n‧D：起始強度應讓病人能無不適完成，以提高遵從性，再逐步增加。" },
+  { answer:"D", explanation:"正解 (D)（錯誤敘述）。\n肺復健是 COPD 非藥物治療中證據等級最高的介入之一（GOLD Evidence A），已證實可改善呼吸困難、運動耐受力、健康相關生活品質，並降低焦慮憂鬱與急性惡化後再住院率。故「無任何證據改善生活品質」為錯誤。A、B、C 皆為正確敘述。" },
+  { answer:"C", explanation:"正解 (C)（錯誤敘述）。\n抗膽鹼藥物（如 ipratropium、tiotropium）的機轉是「阻斷」乙醯膽鹼與氣道平滑肌上蕈毒鹼（M3）受體的結合，降低迷走神經張力而使支氣管擴張，而不是「激活」其結合。\n‧A：呼吸器病人常以霧化器或 MDI 加 spacer 於管路中給藥。\n‧B：β2-agonist 作用於 β2 受體，經 cAMP 路徑使平滑肌放鬆。\n‧D：β2-agonist 常見副作用包括心搏過速、顫抖、低血鉀。" },
+  { answer:"D", explanation:"正解 (D)（最不適當）。\n粉刺樣皮疹是面罩長時間覆蓋、悶熱潮濕與材質刺激造成的皮膚反應，處理方式為局部類固醇或抗生素藥膏、加強皮膚清潔，或改用與皮膚接觸面積較少的介面（如鼻枕）；改用全臉罩覆蓋面積更大，反而可能使皮疹惡化。\n‧A：口鼻罩易使空氣吞入造成胃脹、嘔吐，必要時放置鼻胃管減壓，可降低嗆吸風險。\n‧B：鼻樑壓傷應調整鬆緊、加上保護敷料或更換介面。\n‧C：口咬器介面易脫落，需設定適當低壓／斷線警報。" },
+  { answer:"C", explanation:"正解 (C) 強制機械通氣速率（mandatory rate）。\n居家呼吸器使用者多為呼吸驅動或呼吸肌力不足的病人，必須具備「備用／強制呼吸次數」，確保在病人自發呼吸不足或停止時仍有最低通氣量，這是維生的基本功能。\n‧B：居家呼吸器多以低流量氧氣接入補充，通常無法也不需要提供 100% 氧氣。\n‧A、D：靈敏度與 PEEP 雖常見，但重要性不及備用呼吸次數。" },
+  { answer:"A", explanation:"正解 (A)（錯誤敘述）。\n高碳酸血症呼吸衰竭（如 COPD 急性惡化合併呼吸性酸中毒 pH < 7.35、PaCO2 > 45 mm Hg）正是 NPPV 證據最強的適應症，可降低插管率與死亡率，故「不適用」錯誤。\n‧B：低血氧性呼吸衰竭（如肺炎、ARDS）使用 NPPV 失敗率較高，需審慎評估並密切監測。\n‧C、D：神經肌肉疾病與 COPD 急性惡化皆可優先選用 NPPV。" },
+  { answer:"B", explanation:"正解 (B) 間歇性強制通氣（IMV／SIMV）。\nIMV 依設定次數給予強制呼吸，在強制呼吸之間允許病人自發呼吸（可加上壓力支持），因此是強制與自發呼吸交替出現的模式。\n‧A：CMV（A/C）中每一口呼吸（不論觸發者）都是強制呼吸。\n‧C：CSV（如 CPAP、PSV）全部都是自發呼吸。\n‧D：雙控制是控制變數（壓力／容積）的調控方式，並非描述呼吸型態的組合。" },
+  { answer:"C", explanation:"正解 (C)（錯誤敘述）。\n研究並未證實 T-piece 優於低壓 PSV；多數比較研究顯示兩者的拔管成功率相近，而部分研究（及 ATS/ACCP 指引）認為低壓 PSV（5–8 cm H2O）的 SBT 通過率較高，且不增加再插管率。T-piece 反而因缺少支持，對病人負荷較大。\nA、B、D 皆為正確敘述：SBT 可用 CPAP、低壓 PSV 或 T-piece；耐受 30–120 分鐘者約 77–85% 可成功拔管；失敗的 SBT 應即時中止，避免疲勞與不穩。" },
+  { answer:"D", explanation:"正解 (D)。\n氣切管相較於經口氣管內管，病人較舒適、耐受度高，因此可「減少」而非增加鎮靜劑使用。\n氣切的好處還包括：改善生活品質與溝通能力（A）、病情許可時可經口進食（B）、管路短而易於抽痰與口腔照護（C）、降低呼吸道阻力與死腔，有助於長期呼吸器病人的脫離訓練。" },
+  { answer:"A", explanation:"正解 (A) 收縮壓低於 90 mm Hg。\nSBT 失敗（應中止並接回呼吸器）的常見指標：\n‧血行動力學：收縮壓 > 180 或 < 90 mm Hg，心跳 > 140 次/分或變化 > 20%。\n‧呼吸：RR > 35 次/分（持續 > 5 分鐘）或增加 > 50%。\n‧氣體交換：SpO2 < 90%、PaO2 < 60 mm Hg。\n‧其他：明顯躁動、冒汗、呼吸輔助肌使用增加、意識改變。\nB（RR 26）、C（HR 105，增加約 19%）、D（SpO2 90%，未低於 90%）皆尚在可接受範圍，只有 A 符合失敗條件。" },
+  { answer:"D", explanation:"正解 (D) 僅①④。\n呼吸治療師主導的脫離計畫（protocol-directed weaning）之所以有效，在於「標準化流程」：每日依既定指標篩選、執行 SBT，不必等待個別醫囑，因此脫離時間較短（①正確），呼吸器相關併發症（如 VAP）也較少（④正確）。\n‧②錯誤：成效來自流程標準化與即時執行，而非「治療師比醫師更了解呼吸器」。\n‧③錯誤：protocol 的目的正是降低對個人經驗的依賴，由明確準則引導決策。" },
+  { answer:"D", explanation:"正解 (D)（錯誤敘述）。\nP0.1 為吸氣開始後將呼吸道阻斷 100 ms 所測得的壓力（A），因時間極短，病人尚未意識到阻斷，故與意識用力無關（B），可反映中樞呼吸驅力（C）。\n正常值約 −1 至 −2 cm H2O（絕對值 < 4）。當 P0.1 比 −4～−6 cm H2O 更負（例如 −7），表示呼吸驅力過高、呼吸負荷大，脫離容易失敗。−3 cm H2O 仍屬可接受範圍，並不代表呼吸功增加，故 D 錯誤。" },
+  { answer:"D", explanation:"正解 (D) 比例輔助通氣（PAV）30%。\n標準的 SBT 執行方式為：T-piece、低量 CPAP（約 5 cm H2O）、低量 PSV（5–8 cm H2O，用以抵銷管路與氣管內管造成的額外阻力）。\nPAV 是依病人呼吸用力按比例給予輔助的通氣模式，屬於部分支持的通氣方式，並非常規用來執行 SBT 的標準模式。" },
+  { answer:"B", explanation:"正解 (B)（錯誤敘述）。\nRSBI（f/VT）的預測價值在「短期」使用呼吸器的病人最好；對長期使用呼吸器（尤其 > 3 週）的病人，其預測準確度反而下降，因這類病人脫離困難的原因更複雜（肌力、營養、心理、合併症等）。\n‧A：RSBI = RR（次/分）÷ VT（L）。\n‧C：老年病人呼吸型態本就偏淺快，準確度降低。\n‧D：標準量法為停止支持、自發呼吸 1 分鐘測量；在 PSV 下測得會使數值偏低，準確度下降。" },
+  { answer:"B", explanation:"正解 (B) ②③。\n低 PEEP 警報通常設在設定 PEEP 下方約 2–5 cm H2O；PEEP 8 cm H2O 時設為 5 cm H2O 合理（②）。設為 2 cm H2O 等於把警報幾乎關閉，無法及時發現 PEEP 流失（①錯誤）。\n低 PEEP 警報最常見的原因是系統漏氣（管路鬆脫、接頭破損、氣囊漏氣、吐氣閥異常），故應優先檢查漏氣（③）。管路積水通常造成的是阻力增加、誤觸發或高壓警報，並非低 PEEP 的主要原因（④較不適當）。" },
+  { answer:"C", explanation:"正解 (C)。\n「脫離呼吸器」與「移除人工氣道（拔管）」是兩個不同的評估。題目指病人已通過脫離訓練（包含 RSBI 等指標），拔管失敗的原因主要與「呼吸道保護與暢通」有關：\n‧上呼吸道水腫／喉頭水腫（A）→ 拔管前可做氣囊漏氣測試。\n‧咳嗽力量不足（B）、分泌物過多無法咳出（D）。\n‧意識狀態不佳、無法保護呼吸道。\nC 的「無法通過淺快呼吸指標」屬於脫離呼吸器階段的評估，並非拔管失敗的原因。" },
+  { answer:"A", explanation:"正解 (A) 72℃ 濕熱 15 秒。\n巴斯德消毒法屬於「中低程度消毒」，常見兩種條件：\n‧高溫短時間（flash）：72℃，15 秒。\n‧低溫長時間（batch）：63℃，30 分鐘（B 的 15 分鐘時間不足）。\n可殺死大部分致病菌及病毒（包括 HIV，C 錯誤），但無法殺死細菌芽孢，也不能達到滅菌，故 D「各種細菌及病毒」錯誤。" },
+  { answer:"C", explanation:"正解 (C) 壓力控制通氣（PCV）。\n常用的脫離方式包括：SBT（T-piece／CPAP）、SIMV 逐步調降強制次數、PSV 逐步調降支持壓力。\nPCV 屬於「完全支持」的控制型通氣模式，每一口呼吸的壓力與時間皆由呼吸器決定，無法讓病人逐步承擔呼吸功，因此不作為脫離方式。" },
+  { answer:"A", explanation:"正解 (A) 0.5～2 小時。\nSBT 建議持續 30–120 分鐘。研究顯示 30 分鐘與 120 分鐘的 SBT 拔管成功率相近，多數失敗會發生在最初的 20–30 分鐘內；過度延長 SBT 並不會提升預測準確度，反而可能造成呼吸肌疲勞、血行動力學不穩。" },
+  { answer:"C", explanation:"正解 (C) ＜105。\nYang 與 Tobin（1991）提出淺快呼吸指數 RSBI = f（次/分）÷ VT（L）。\n‧RSBI < 105 次/分/L：預測脫離成功的機率較高。\n‧RSBI > 105：呼吸型態淺快，代表呼吸負荷大於呼吸肌能力，脫離失敗的可能性較高。\n例：RR 30 次/分、VT 0.25 L → RSBI = 120，屬於偏高。" }
 ];
 
 /* 取得後測題目正解（給前端 fallback 計分使用） */
@@ -2642,7 +2717,8 @@ function _examGradeLocally(mode, order, answers){
    為避免學生透過開發者工具(F12)直接讀取，
    25 題的「正確答案」與「正解分析」皆儲存於 Google Apps Script 後端，
    解鎖／送出考卷時透過 GAS API 驗證與計分。
-   前端只有題目文字與選項，沒有 answer 欄位。
+   ★ 更新：本題庫的正解與解析已內建於前端 EXAM_ANSWERS，計分一律以前端題庫為準，
+     避免後端舊題庫答案與目前 25 題不一致而計分錯誤。
 */
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -2681,8 +2757,8 @@ const EXAM_CATEGORIES = [
   { key:'NUTRITION', name:'呼吸衰竭病人的營養評估與支持',
     advice:'複習熱量／蛋白質需求估算、呼吸商（RQ）與過度餵食對 CO2 產生的影響，以及營養不良對呼吸肌力的衝擊。',
     course:'課後測驗(1) 呼吸器脫離訓練計畫(含營養評估)與常見方式' },
-  { key:'LTC_VENT', name:'長期呼吸照護與居家／機構呼吸器',
-    advice:'了解 RCC／RCW／居家呼吸器的收案條件、轉銜流程與長期照護的追蹤重點。',
+  { key:'LTC_VENT', name:'長期呼吸照護、居家呼吸器與 COPD 肺復健',
+    advice:'了解 RCC／RCW／居家呼吸器的收案與下轉條件、居家呼吸器必要配備與介面併發症處理，以及 COPD 長期氧療適應症與肺復健運動訓練原則。',
     course:'請搭配實習前自習教材與臨床帶教複習' },
   { key:'AIRWAY_TRACH', name:'人工氣道與氣切照護',
     advice:'熟悉氣切管種類、更換時機、氣囊壓力維持（20–30 cmH2O）與拔管（decannulation）評估流程。',
@@ -2699,7 +2775,31 @@ const EXAM_CATEGORIES = [
 ];
 /* 每題（原始索引 0–24，對應 EXAM_QUESTIONS）所屬範疇 key */
 const EXAM_QUESTION_CATEGORY = [
-  /* 題目補齊後，依序填入每題的範疇 key，長度需等於 EXAM_QUESTIONS.length */
+  "WEAN_PLAN" /* 第1題 */,
+  "LTC_VENT" /* 第2題 */,
+  "LTC_VENT" /* 第3題 */,
+  "LTC_VENT" /* 第4題 */,
+  "MV_SETTING" /* 第5題 */,
+  "LTC_VENT" /* 第6題 */,
+  "LTC_VENT" /* 第7題 */,
+  "MV_SETTING" /* 第8題 */,
+  "LTC_VENT" /* 第9題 */,
+  "LTC_VENT" /* 第10題 */,
+  "MV_SETTING" /* 第11題 */,
+  "MV_SETTING" /* 第12題 */,
+  "WEAN_PLAN" /* 第13題 */,
+  "AIRWAY_TRACH" /* 第14題 */,
+  "WEAN_PLAN" /* 第15題 */,
+  "WEAN_PLAN" /* 第16題 */,
+  "WEAN_INDEX" /* 第17題 */,
+  "WEAN_PLAN" /* 第18題 */,
+  "WEAN_INDEX" /* 第19題 */,
+  "MV_SETTING" /* 第20題 */,
+  "AIRWAY_TRACH" /* 第21題 */,
+  "INFECTION" /* 第22題 */,
+  "WEAN_PLAN" /* 第23題 */,
+  "WEAN_PLAN" /* 第24題 */,
+  "WEAN_INDEX" /* 第25題 */
 ];
 /* ─── 依範疇統計答對/答錯 ───
    參數：
@@ -8759,7 +8859,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='</table>';
 
     // ── 錯題方向分析（前測/後測共用，已送出才顯示） ──
-    if(submitted){
+    if(submitted && examMode==='post'){
       var __catRows = _examCategoryRows(pdfOrder, pdfWrongSet, function(qNum){ return !!String(d['q'+qNum]||''); });
       html += renderExamAnalysisPDF(__catRows, examMode);
       // 後測：附前測→後測進步對照（若能取得已送出的前測資料）
@@ -12680,8 +12780,8 @@ function _examGetAnswers(fid){
 }
 
 /* ── 取得此份考卷的題目順序（display index → original question index） ──
-   - 後測：第一次解鎖後產生隨機順序並儲存於 formData[fid].order（持久化）；
-     之後重新整理、跨裝置同步、暫離回來都會用同一份順序，作答進度不會錯位。
+   - 後測：每次輸入 PIN 解鎖時由 _examReshufflePost() 重新洗牌並搬移已作答答案；
+     解鎖期間（同一次作答）題序固定，作答進度不會錯位。
    - 前測：依原始題目順序（不洗牌）。
    - 已送出（submitted）：永遠用儲存的順序，避免改題序。
 */
@@ -12749,7 +12849,7 @@ function _examCalcScore(fid, mode){
   for(var i=0;i<EXAM_QUESTIONS.length;i++){
     var u=(ans[i]||'').toUpperCase();
     var origIdx=order[i];
-    var correctAns=EXAM_QUESTIONS[origIdx].answer;
+    var correctAns=_examGetCorrectAnswer(origIdx);
     if(u) answered++;
     if(u===correctAns){
       correct++;
@@ -12876,29 +12976,9 @@ async function examSubmit(fid, mode){
   }
   var sid = (APP.currentUser&&APP.currentUser.sid)||'guest';
 
-  var res = null;
-  var usedBackend = false;
-  // 1) 嘗試後端
-  try{
-    var apiResp = await _examCallApi('examGrade', {
-      mode: mode, sid: sid, fid: fid, order: order, answers: answers
-    });
-    if(apiResp && apiResp.ok && apiResp.result){
-      res = apiResp.result;
-      usedBackend = true;
-      // 後測必須有 review 才算後端有效，否則改用本地補回（避免顯示「—」）
-      if(mode==='post' && (!res.review || (typeof res.review==='object' && Object.keys(res.review).length===0))){
-        var localRes = _examGradeLocally(mode, order, answers);
-        res.review = localRes.review;
-      }
-    }
-  }catch(err){
-    console.warn('後端計分失敗，改用前端 fallback：', err && err.message ? err.message : err);
-  }
-  // 2) 後端失敗 → 本地計分
-  if(!res){
-    res = _examGradeLocally(mode, order, answers);
-  }
+  // ★ 題庫（題目＋正解＋解析）已內建於前端，計分一律以前端題庫為準，
+  //   避免後端舊版題庫答案與目前 25 題不一致而造成錯誤計分。
+  var res = _examGradeLocally(mode, order, answers);
 
   try{
     saveDraftField(fid,'submitted','true');
@@ -12915,9 +12995,6 @@ async function examSubmit(fid, mode){
     }
 
     var scoreMsg = '考卷已送出 ✓ 您的分數：'+(res.score||0)+' 分';
-    if(!usedBackend){
-      scoreMsg += '（前端計分）';
-    }
     toast(scoreMsg);
 
     try{
@@ -13094,7 +13171,8 @@ function _buildExamCommon(f, d, fid, mode){
   }
 
   // 錯題方向分析（已送出才顯示，前測/後測共用，學生與老師皆可見）
-  if(submitted && res){
+  // ★ 前測：只標示錯題，不顯示正解與考題分析；後測才顯示方向分析
+  if(submitted && res && mode==='post'){
     var _catRows = _examCategoryRows(order, wrongSet, function(qNum){ return !!(d['q'+qNum]||''); });
     h += renderExamAnalysisCard(_catRows, mode);
     // 後測：附上「前測→後測 各方向進步對照」（若能取得已送出的前測資料）
@@ -13672,7 +13750,7 @@ function _buildExamPostPinGate(fid){
     '</div>'+
     '<div id="exam-pin-msg" style="margin-top:10px;font-size:12px;min-height:18px;"></div>'+
     '<div style="margin-top:14px;padding:10px 12px;background:#FEF3C7;border-left:3px solid #F59E0B;border-radius:4px;font-size:11px;color:#78350F;line-height:1.7;">'+
-    '💡 <b>說明：</b>解鎖後，您可以立即開始作答；送出考卷後會立即顯示分數與所有題目的正確答案。'+
+    '💡 <b>說明：</b>每次輸入 PIN 解鎖，25 題題目都會<b>重新隨機排序</b>（已作答的答案會跟著題目移動）；送出考卷後會立即顯示分數、每題正確答案與正解分析。'+
     '</div>'+
     '</div></div>';
 }
@@ -13729,6 +13807,64 @@ async function _examCallApi(action, payload){
   }
 }
 
+/* ── 後測：每次 PIN 解鎖都重新洗牌題序 ──
+   答案原本以「畫面題號」q1~q25 儲存，洗牌時先依舊題序換算回原始題目，
+   再依新題序寫回，確保已作答的內容跟著題目移動。已送出的考卷不會洗牌。
+   回傳 true 表示已重新排序。 */
+function _examReshufflePost(fid){
+  var n = EXAM_QUESTIONS.length;
+  if(!n) return false;
+  if(!APP.formData[fid]) APP.formData[fid]={};
+  var d = APP.formData[fid];
+  if(d.submitted==='true' || d.submitted===true) return false;
+  // 舊題序（不合法則視為原始順序）
+  var oldOrder = d.order;
+  if(typeof oldOrder==='string'){ try{ oldOrder=JSON.parse(oldOrder); }catch(e){ oldOrder=null; } }
+  var valid = Array.isArray(oldOrder) && oldOrder.length===n;
+  if(valid){
+    var seen={};
+    for(var i=0;i<n;i++){
+      var v=oldOrder[i];
+      if(typeof v!=='number' || v<0 || v>=n || seen[v]){ valid=false; break; }
+      seen[v]=true;
+    }
+  }
+  if(!valid){ oldOrder=[]; for(var k=0;k<n;k++) oldOrder.push(k); }
+  // 原始題目索引 → 已作答答案
+  var ansByOrig = {};
+  for(var a=0;a<n;a++){
+    var u = String(d['q'+(a+1)]||'').toUpperCase();
+    if(u) ansByOrig[oldOrder[a]] = u;
+  }
+  // 產生新題序（Fisher-Yates），盡量與上次不同
+  var newOrder, tries=0;
+  do{
+    newOrder=[]; for(var m=0;m<n;m++) newOrder.push(m);
+    for(var j=n-1;j>0;j--){
+      var r=Math.floor(Math.random()*(j+1));
+      var t=newOrder[j]; newOrder[j]=newOrder[r]; newOrder[r]=t;
+    }
+    tries++;
+  }while(tries<5 && newOrder.join(',')===oldOrder.join(','));
+  // 寫回題序與答案
+  try{ saveDraftField(fid,'order',JSON.stringify(newOrder)); }catch(e){}
+  d = APP.formData[fid] || d;
+  d.order = newOrder.slice();
+  for(var q=0;q<n;q++){
+    var key='q'+(q+1);
+    var nv = ansByOrig[newOrder[q]] || '';
+    var cur = String(d[key]||'').toUpperCase();
+    if(nv===cur) continue;
+    try{
+      saveDraftField(fid, key, nv);   // '' 會自動登記刪除墓碑
+      if(nv && typeof unmarkFieldDeleted==='function') unmarkFieldDeleted(fid, key);
+    }catch(e){}
+    if(nv){ d[key]=nv; } else { delete d[key]; }
+  }
+  try{ if(typeof scheduleAutoSave==='function') scheduleAutoSave('F-POST'); }catch(e){}
+  return true;
+}
+
 async function examPostUnlock(){
   var inp = document.getElementById('exam-pin-input');
   var msg = document.getElementById('exam-pin-msg');
@@ -13758,25 +13894,11 @@ async function examPostUnlock(){
     if(apiResp && apiResp.ok){
       clearFails(lockKey);
       APP.examUnlocked=true;
-      // 把伺服器產生的題序寫入 formData（但若已有合法 order 與作答，保留原 order）
-      if(Array.isArray(apiResp.order) && apiResp.order.length){
-        if(!APP.formData[fid]) APP.formData[fid]={};
-        var existingOrder = APP.formData[fid].order;
-        // 已存在合法 order → 保留（避免破壞作答中的對應關係）
-        var hasValidOrder = false;
-        if(typeof existingOrder==='string' && existingOrder){
-          try{ existingOrder = JSON.parse(existingOrder); }catch(e){ existingOrder=null; }
-        }
-        if(Array.isArray(existingOrder) && existingOrder.length===EXAM_QUESTIONS.length){
-          hasValidOrder=true;
-        }
-        if(!hasValidOrder){
-          APP.formData[fid].order = apiResp.order.slice();
-          try{ saveDraftField(fid,'order',JSON.stringify(apiResp.order)); }catch(e){}
-        }
-      }
+      // ★ 每次輸入 PIN 解鎖都重新隨機排序題目（同一份 25 題）；
+      //   已作答的答案會跟著題目一起搬到新位置，不會遺失或錯位。
+      var reshuffled = _examReshufflePost(fid);
       msg.style.color='#10B981';
-      msg.textContent='✓ 解鎖成功，正在開啟後測...';
+      msg.textContent = reshuffled ? '✓ 解鎖成功，題目已重新隨機排序，正在開啟後測...' : '✓ 解鎖成功，正在開啟後測...';
       inp.value='';
       setTimeout(function(){ openForm('F-POST'); }, 350);
     } else {
