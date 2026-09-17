@@ -15866,7 +15866,10 @@ function cohortSections(students){
       if(po){ postStu++; po.forEach(function(r){ if(agg[r.key]){ agg[r.key].postC+=r.correct; agg[r.key].postT+=r.total; } }); }
     });
     if(preStu===0 && postStu===0) return; // 全班都還沒作答就不顯示
-    var cats=EXAM_CATEGORIES.map(function(c){
+    // ★ 只列出題庫中實際有出題的範疇（避免沒有題目的範疇以 0% 排在最弱處）
+    var catQCount={};
+    (EXAM_QUESTION_CATEGORY||[]).forEach(function(k){ catQCount[k]=(catQCount[k]||0)+1; });
+    var cats=EXAM_CATEGORIES.filter(function(c){ return catQCount[c.key]>0; }).map(function(c){
       var a=agg[c.key];
       var preRate  = a.preT>0  ? Math.round(a.preC/a.preT*100)   : null;
       var postRate = a.postT>0 ? Math.round(a.postC/a.postT*100) : null;
@@ -15880,7 +15883,7 @@ function cohortSections(students){
     var labels = sorted.map(function(c){ return c.name; });
     var vals   = sorted.map(function(c){ return c.primary; });
     var html='';
-    html+=_cohNote('把 25 題依臨床範疇分成 9 大方向，統計<b>全班</b>各方向的正確率（'+useLabel+'，已完成 '+doneN+' 人）。長條由低到高排序，越上面代表<b>全班共同越弱</b>、最該加強的教學方向；紅線為 80% 掌握門檻。');
+    html+=_cohNote('把 '+EXAM_QUESTIONS.length+' 題依臨床範疇分成 '+cats.length+' 大方向，統計<b>全班</b>各方向的正確率（'+useLabel+'，已完成 '+doneN+' 人）。長條由低到高排序，越上面代表<b>全班共同越弱</b>、最該加強的教學方向；紅線為 80% 掌握門檻。');
     html+=_cohChartBox(cohortHBarSVG(labels, vals, {max:100, threshold:80, thresholdLabel:'掌握門檻 80', labelW:210, rowH:16}));
     var head='<tr>'+_cohTh('臨床方向')+_cohTh('前測班正確率')+_cohTh('後測班正確率')+_cohTh('進步')+_cohTh('掌握度')+'</tr>';
     var body='';
@@ -15913,6 +15916,144 @@ function cohortSections(students){
       html+='<div style="margin-top:10px;padding:10px 12px;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;color:#065F46;font-weight:700;font-size:13px;">👏 全班各方向正確率皆 ≥ 80%，整體掌握良好。</div>';
     }
     secs.push({id:'examdir', title:'③ 全班錯題方向彙整（弱點教學地圖）', html:html});
+  })();
+
+  /* 3-3) 全班逐題錯題排行（同學最常錯哪幾題） */
+  (function(){
+    if(typeof EXAM_QUESTIONS==='undefined' || !EXAM_QUESTIONS.length || typeof EXAM_ANSWERS==='undefined') return;
+    var N=EXAM_QUESTIONS.length, L=['A','B','C','D'];
+    var catName={}; (EXAM_CATEGORIES||[]).forEach(function(c){ catName[c.key]=c.name; });
+    // 把一份已送出的考卷換算成「原始題號 → 學生答案」（後測題序為洗牌後，需依 order 還原）
+    function byOrig(d){
+      if(!d || !(d.submitted==='true' || d.submitted===true)) return null;
+      var order=d.order;
+      if(typeof order==='string' && order){ try{ order=JSON.parse(order); }catch(e){ order=null; } }
+      var ok=Array.isArray(order) && order.length===N;
+      if(ok){ var seen={}; for(var i=0;i<N;i++){ var v=order[i]; if(typeof v!=='number'||v<0||v>=N||seen[v]){ ok=false; break; } seen[v]=true; } }
+      if(!ok){ order=[]; for(var k=0;k<N;k++) order.push(k); }
+      var out=new Array(N);
+      for(var j=0;j<N;j++) out[order[j]]=String(d['q'+(j+1)]||'').toUpperCase();
+      return out;
+    }
+    function blank(){ return {n:0, wrong:0, dist:{A:0,B:0,C:0,D:0,'':0}, wrongNames:[]}; }
+    var stat=[]; for(var q=0;q<N;q++) stat.push({pre:blank(), post:blank()});
+    var preN=0, postN=0;
+    students.forEach(function(s){
+      [['pre','F-PRE'],['post','F-POST']].forEach(function(ph){
+        var a=byOrig(cohortForm(ph[1], s.sid));
+        if(!a) return;
+        if(ph[0]==='pre') preN++; else postN++;
+        for(var q=0;q<N;q++){
+          var st=stat[q][ph[0]], ua=a[q]||'', ca=String(EXAM_ANSWERS[q].answer||'').toUpperCase();
+          st.n++;
+          st.dist[L.indexOf(ua)>=0?ua:'']++;
+          if(ua!==ca){ st.wrong++; st.wrongNames.push(s.name+(ua?'（選'+ua+'）':'（未答）')); }
+        }
+      });
+    });
+    if(preN===0 && postN===0) return;
+    function rate(st){ return st.n>0 ? Math.round(st.wrong/st.n*100) : null; }
+    // 最常被誤選的選項（不含正解）
+    function topWrong(st, ca){
+      var best='', bc=0;
+      L.forEach(function(x){ if(x!==ca && st.dist[x]>bc){ bc=st.dist[x]; best=x; } });
+      if(!best && st.dist['']>0) return {opt:'未作答', cnt:st.dist['']};
+      return best ? {opt:best, cnt:bc} : null;
+    }
+    function shortQ(t, len){ t=String(t||'').split('\n')[0].replace(/\s+/g,' ').trim(); return t.length>len ? t.slice(0,len)+'…' : t; }
+    var useLabel = postN>0 ? '後測' : '前測';
+    var usePh = postN>0 ? 'post' : 'pre';
+    var rows=[];
+    for(var i=0;i<N;i++){
+      var r=stat[i];
+      rows.push({ idx:i, pre:r.pre, post:r.post, preRate:rate(r.pre), postRate:rate(r.post),
+                  primary: rate(r[usePh]) || 0, wrongCnt: r[usePh].wrong });
+    }
+    var sorted=rows.slice().sort(function(a,b){ return (b.primary-a.primary) || (b.wrongCnt-a.wrongCnt) || ((b.preRate||0)-(a.preRate||0)) || (a.idx-b.idx); });
+
+    var html='';
+    html+=_cohNote('依<b>題庫原始題號</b>（第 1～'+N+' 題，後測雖為隨機題序，已自動換算回原題號）統計全班每一題的<b>答錯率</b>（未作答視為答錯）。'
+      +'排序依據：'+useLabel+'（前測已完成 '+preN+' 人、後測已完成 '+postN+' 人）。長條越長代表越多同學答錯；紅線為 50%，超過代表<b>半數以上同學答錯</b>，建議優先於課堂中講解。');
+    var top=sorted.filter(function(r){ return r.primary>0; }).slice(0,10);
+    if(top.length){
+      html+='<div style="font-size:12px;font-weight:700;color:#164539;margin:4px 0 2px;">▍'+useLabel+'答錯率最高的題目（前 '+top.length+' 題）</div>';
+      html+=_cohChartBox(cohortHBarSVG(
+        top.map(function(r){ return '第'+(r.idx+1)+'題 '+shortQ(EXAM_QUESTIONS[r.idx].q,13); }),
+        top.map(function(r){ return r.primary; }),
+        {max:100, threshold:50, thresholdLabel:'半數答錯 50', labelW:230, rowH:18}));
+    }
+
+    // 逐題總表（全部題目，依答錯率高→低）
+    var NW='white-space:nowrap;';
+    var head='<tr>'+_cohTh('原題號',NW)+_cohTh('題目摘要')+_cohTh('臨床方向')+_cohTh('正解',NW)
+      +_cohTh('前測答錯率',NW)+_cohTh('後測答錯率',NW)+_cohTh('前→後變化',NW)+_cohTh('最常誤選（'+useLabel+'）',NW)+'</tr>';
+    var body='';
+    function rc(st, rt){
+      if(rt==null) return _cohTd('<span style="color:#bbb;">—</span>');
+      var col=rt>=50?'#DC2626':(rt>=20?'#D97706':'#059669');
+      return _cohTd('<b style="color:'+col+';">'+rt+'%</b><div style="font-size:10px;color:#64748b;">'+st.wrong+'/'+st.n+' 人</div>','white-space:nowrap;');
+    }
+    sorted.forEach(function(r){
+      var ca=String(EXAM_ANSWERS[r.idx].answer||'').toUpperCase();
+      var diff=(r.preRate!=null && r.postRate!=null) ? (r.preRate-r.postRate) : null; // 答錯率下降＝進步
+      var dTxt=diff==null?'—':(diff>0?'▲ 錯誤率 −'+diff+'%':diff<0?'▼ 錯誤率 +'+(-diff)+'%':'持平');
+      var dCol=diff==null?'#94a3b8':(diff>0?'#059669':diff<0?'#DC2626':'#64748b');
+      var tw=topWrong(r[usePh], ca);
+      var twTxt=tw ? ('<b>'+tw.opt+'</b>（'+tw.cnt+' 人）') : '<span style="color:#bbb;">—</span>';
+      body+='<tr>'
+        +_cohTd('<b>'+(r.idx+1)+'</b>','background:#FAFBFF;')
+        +_cohTd(_cohEsc(shortQ(EXAM_QUESTIONS[r.idx].q,30)),'text-align:left;')
+        +_cohTd(_cohEsc(catName[EXAM_QUESTION_CATEGORY[r.idx]]||'—'),'font-size:11px;')
+        +_cohTd('<b style="color:#059669;">'+ca+'</b>')
+        +rc(r.pre, r.preRate)+rc(r.post, r.postRate)
+        +_cohTd(dTxt,'color:'+dCol+';font-weight:700;white-space:nowrap;font-size:11px;')
+        +_cohTd(twTxt,'white-space:nowrap;')
+        +'</tr>';
+    });
+    html+='<div style="overflow-x:auto;">'+_cohTbl(head,body)+'</div>';
+
+    // 重點錯題詳解卡（答錯率最高的前 5 題）
+    var focus=sorted.filter(function(r){ return r.primary>0; }).slice(0,5);
+    if(focus.length){
+      html+='<div style="margin-top:12px;border:1px solid #FCA5A5;border-radius:8px;overflow:hidden;">';
+      html+='<div style="background:#DC2626;color:#fff;padding:8px 12px;font-weight:700;font-size:13px;">📌 重點錯題詳解（'+useLabel+'答錯率最高的 '+focus.length+' 題）— 建議課堂優先講解</div>';
+      focus.forEach(function(r){
+        var Q=EXAM_QUESTIONS[r.idx], ca=String(EXAM_ANSWERS[r.idx].answer||'').toUpperCase();
+        var st=r[usePh];
+        html+='<div style="padding:10px 12px;border-bottom:1px dashed #FECACA;background:#FFFBFB;page-break-inside:avoid;">';
+        html+='<div style="font-weight:700;color:#7F1D1D;font-size:13px;">第 '+(r.idx+1)+' 題　'+useLabel+'答錯 '+st.wrong+'/'+st.n+' 人（'+r.primary+'%）'
+          +'<span style="font-weight:400;color:#64748b;font-size:11px;">　｜　'+_cohEsc(catName[EXAM_QUESTION_CATEGORY[r.idx]]||'')+'</span></div>';
+        html+='<div style="font-size:12px;color:#1E293B;line-height:1.7;margin-top:4px;white-space:pre-wrap;">'+_cohEsc(Q.q)+'</div>';
+        // 選項＋全班選答分布
+        html+='<table style="width:100%;border-collapse:collapse;font-size:11.5px;margin-top:6px;">';
+        L.forEach(function(x){
+          var cnt=st.dist[x], pct=st.n?Math.round(cnt/st.n*100):0, isC=(x===ca);
+          var bar=isC?'#10B981':(cnt>0?'#F87171':'#E5E7EB');
+          html+='<tr style="background:'+(isC?'#ECFDF5':'#fff')+';">'
+            +'<td style="padding:4px 6px;border:1px solid #eee;text-align:left;'+(isC?'color:#065F46;font-weight:700;':'')+'">('+x+') '+_cohEsc(Q.options[x])+(isC?'　✓ 正解':'')+'</td>'
+            +'<td style="padding:4px 6px;border:1px solid #eee;width:150px;white-space:nowrap;">'
+            +'<div style="display:inline-block;vertical-align:middle;width:80px;height:9px;background:#F1F5F9;border-radius:4px;overflow:hidden;"><div style="height:9px;width:'+pct+'%;background:'+bar+';"></div></div>'
+            +' <span style="font-size:11px;">'+cnt+' 人（'+pct+'%）</span></td></tr>';
+        });
+        if(st.dist['']>0){
+          html+='<tr><td style="padding:4px 6px;border:1px solid #eee;text-align:left;color:#64748b;">未作答</td><td style="padding:4px 6px;border:1px solid #eee;font-size:11px;">'+st.dist['']+' 人</td></tr>';
+        }
+        html+='</table>';
+        if(st.wrongNames.length){
+          html+='<div style="font-size:11.5px;color:#991B1B;margin-top:5px;">答錯同學：'+_cohEsc(st.wrongNames.join('、'))+'</div>';
+        }
+        var ex=String(EXAM_ANSWERS[r.idx].explanation||'');
+        if(ex){
+          html+='<div style="font-size:11.5px;color:#334155;line-height:1.7;margin-top:6px;padding:6px 9px;background:#F8FAFC;border-left:3px solid #10B981;white-space:pre-wrap;">'
+            +'<b style="color:#065F46;">教學重點：</b>'+_cohEsc(ex)+'</div>';
+        }
+        html+='</div>';
+      });
+      html+='</div>';
+    } else {
+      html+='<div style="margin-top:10px;padding:10px 12px;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;color:#065F46;font-weight:700;font-size:13px;">👏 全班'+useLabel+'所有題目皆答對！</div>';
+    }
+    secs.push({id:'examq', title:'③ 全班逐題錯題排行（同學最常錯哪幾題）', html:html});
   })();
 
   /* 4) 核心課程各堂平均 */
