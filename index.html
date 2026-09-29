@@ -56,11 +56,11 @@
   base-uri 'self';
   form-action 'self' https://script.google.com https://script.googleusercontent.com;
 ">
-<title>臺中榮總 — 長期呼吸治療學實習 e-Portfolio</title>
+<title>臺中榮總 — 長期呼吸照護實習 e-Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* ─── 配色系統 v3 ─── 長期呼吸治療學實習：深松墨綠 × 陶土赭 ─── */
+  /* ─── 配色系統 v3 ─── 長期呼吸照護實習：深松墨綠 × 陶土赭 ─── */
   /* 設計說明：
      · 學生填寫區 = 深松墨綠（低彩度、深色調，沉穩耐看）
      · 老師填寫區 = 陶土赭（帶土感的暖紅棕，與松綠形成柔和的補色關係）
@@ -969,7 +969,7 @@ input[type="date"]{
     <div class="login-header">
       <div class="hosp">TAICHUNG VETERANS GENERAL HOSPITAL</div>
       <div class="title">胸腔部呼吸治療科<br>實習學習護照 e-Portfolio</div>
-      <div class="sub">長期呼吸治療學實習系統　<span style="color:#1F5F4B;font-weight:700;">v1.0.4</span></div>
+      <div class="sub">長期呼吸照護實習系統　<span style="color:#1F5F4B;font-weight:700;">v1.0.4</span></div>
     </div>
     <div class="login-body">
       <div class="role-tabs">
@@ -1051,7 +1051,7 @@ input[type="date"]{
     <div class="topbar-left">
       <div>
         <div class="topbar-title">臺中榮總 — e-Portfolio</div>
-        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸治療學實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.4 · 2026.08</span></div>
+        <div class="topbar-sub">胸腔部 呼吸治療科 · 長期呼吸照護實習 <span id="version-tag" style="opacity:.7;font-size:10px;margin-left:6px;cursor:pointer;" onclick="_versionTagClick()" title="點擊查看版本資訊（連點 5 下可叫出診斷工具）">LTC v1.0.4 · 2026.08</span></div>
       </div>
     </div>
     <div class="topbar-right">
@@ -1143,7 +1143,7 @@ const GOOGLE_CLIENT_ID = _storedClientId || '416198803583-raro6tl5kbp1582m27heqc
 let CONFIG_GID = safeReadConfigGid();
 
 /* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-   ★  長期呼吸治療學實習專用的 Google Apps Script 部署網址（已填好）    ★
+   ★  長期呼吸照護實習專用的 Google Apps Script 部署網址（已填好）    ★
    ★                                                                    ★
    ★  ✅ 已設定完成，正常情況下不需要再修改這一行。                     ★
    ★                                                                    ★
@@ -1468,7 +1468,9 @@ APP.cohortTermAt=0;
 try{ var _ctLS=localStorage.getItem('cohort_term'); if(_ctLS) APP.cohortTerm=_ctLS; }catch(e){}
 try{ var _ctAt=localStorage.getItem('cohort_term_at'); if(_ctAt) APP.cohortTermAt=(+_ctAt)||0; }catch(e){}
 // 實習類別選項（後台新增學生／逐生編輯實習日期用）
-const INTERN_CATEGORIES=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸治療學實習','綜合臨床實習'];
+const INTERN_CATEGORIES=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸照護實習','綜合臨床實習'];
+/* 實習類別名稱已與重症／小兒版統一為「長期呼吸照護實習」；舊資料若存的是舊名稱，顯示時自動視為新名稱 */
+function _normInternCat(v){ return v==='長期呼吸治療學實習' ? '長期呼吸照護實習' : v; }
 /* ════════════════════════════════════════════════════════════════════
    ★ v1.6 學期（梯次）分類系統
    ────────────────────────────────────────────────────────────────────
@@ -2561,7 +2563,7 @@ const FORMS=[
 ];
 
 /* ═══════════════════════════════════════════════════════════════════
-   長期呼吸治療學實習 — 筆試考題（前測 / 後測共用）
+   長期呼吸照護實習 — 筆試考題（前測 / 後測共用）
    ───────────────────────────────────────────────────────────────────
    ★ 題庫：115學年度高醫長照實習考題（已建置）★
    每題 4 分、共 25 題（總分 100 分）、及格 60 分。
@@ -4179,7 +4181,7 @@ window.showAboutDialog = function(){
       'toast 進度訊息延長至 8~10 秒,避免一閃即逝',
     ]},
     {ver:'v1.5.3', date:'2026.05', notes:[
-      '長期呼吸治療學實習版本建置(配色:深松墨綠 × 陶土赭)',
+      '長期呼吸照護實習版本建置(配色:深松墨綠 × 陶土赭)',
       '原因:#f16-floating-thead 是 appendChild 到 document.body 的 fixed 元素',
       'openForm/renderAdmin 切換時未清除,scroll 監聽也持續觸發顯示',
       '在三個切換入口(openForm/renderFormList/renderAdmin)補上清除邏輯',
@@ -7511,7 +7513,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
   // ── 統一輔助：直接接受 value，兩條呼叫路徑皆適用 ──
   function pdfR(label,v,isT){
     var bg=isT?'#FFF5F5':'#FAFBFF';
-    var disp=(v===undefined||v===null||v==='')?'—':String(v);
+    var disp=(v===undefined||v===null||v==='')?'—':String(_normInternCat(v));
     // 【安全】HTML escape 防 XSS（學生/老師輸入的回饋、評語等不可信內容）
     var safeLabel = (typeof esc==='function') ? esc(label) : String(label||'');
     var safeDisp = (disp==='—') ? '—' : (typeof esc==='function' ? esc(disp) : String(disp));
@@ -7886,7 +7888,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+=pdfR('1. 專業態度（醫病關係、醫療團隊）',val('f12_q1')||'—',false);
     html+=pdfR('2. 專業知識',val('f12_q2')||'—',false);
     html+=pdfR('3. 臨床技能',val('f12_q3')||'—',false);
-    html+=pdfR('4. 我對於長期呼吸治療學實習心得',val('f12_q4')||'—',false);
+    html+=pdfR('4. 我對於長期呼吸照護實習心得',val('f12_q4')||'—',false);
     html+=pdfR('5. 對於如何增進長期呼吸治療實習成效，我的建議是：',val('f12_q5')||'—',false);
     html+='</table>';
 
@@ -8767,7 +8769,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     return html;
   }
 
-  // 筆試前測 / 筆試後測（長期呼吸治療學實習）
+  // 筆試前測 / 筆試後測（長期呼吸照護實習）
   // 25 題單選 + 基本資料 + 分數結果
   // ─ 前測：作答後僅標出錯題（不揭露正解）
   // ─ 後測：作答後完整顯示每題正確答案
@@ -10404,8 +10406,8 @@ function basicInfoCard(fid,d,extraFields,dateLabel,singleDate,noDate){
   }
 
   // 實習類別
-  var cats=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸治療學實習','綜合臨床實習'];
-  var catVal=d['intern_cat']||'';
+  var cats=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸照護實習','綜合臨床實習'];
+  var catVal=_normInternCat(d['intern_cat']||'');
   var catOpts=cats.map(function(c){return '<option value="'+c+'" '+(catVal===c?'selected':'')+'>'+c+'</option>';}).join('');
   var catOC="APP.formData['"+fid+"']=APP.formData['"+fid+"']||{};APP.formData['"+fid+"']['intern_cat']=this.value;saveDraftField('"+fid+"','intern_cat',this.value)";
   var catHtml='<select data-fid="'+fid+'" data-key="intern_cat" onchange="'+catOC+'" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--r);font-size:13px;background:#fff;"><option value="">請選擇實習類別</option>'+catOpts+'</select>';
@@ -10525,7 +10527,7 @@ function buildF01B(f,d,canT,fkey,canS){
 function buildF02(f,d,canT,fkey,canS){
   const fid=fkey||f.id;
   if(canS===undefined)canS=true;
-  /* ★ 長期呼吸治療學實習版：14 項臨床表現自評（原小兒版項目已全面改寫） */
+  /* ★ 長期呼吸照護實習版：14 項臨床表現自評（原小兒版項目已全面改寫） */
   const items=['瞭解長期呼吸照護病人的身體檢查與評估','瞭解長期依賴呼吸器病人的常見診斷及特徵','瞭解呼吸器管路裝置與組裝','呼吸器管路裝置功能測試','瞭解非侵襲性呼吸器裝置及操作','熟悉氣切管路更換與氣囊壓力維持','完成病人評估與呼吸器設定','確實填寫呼吸治療相關記錄單','瞭解呼吸器脫離指標(RSBI／MIP／MEP／CLT)之測量','瞭解自主呼吸試驗(SBT)之執行與中止條件','瞭解呼吸衰竭病人的營養評估與支持','瞭解呼吸器相關肺炎(VAP)之預防措施','擬定呼吸照護與脫離訓練計劃','確實交班'];
   let h=basicInfoCard(fid,d,'');
   h+=`<div class="card"><div class="card-head"><div class="card-head-title">臨床表現評估（非常好5 / 好4 / 普通3 / 不好2 / 非常差1）<span class="s-badge">學生</span></div></div><div class="card-body" style="overflow-x:auto;"><table class="rating-table">
@@ -10761,8 +10763,8 @@ function buildF04Bedside(f,d,canT,fkey,canS){
   // 實習日期（區間）+ 實習類別（下拉）
   h+='<div class="g2">';
   h+='<div class="field"><label>實習日期</label>'+dateRangeField(fid,'s_date',false)+'</div>';
-  var f04cats=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸治療學實習','綜合臨床實習'];
-  var f04catVal=d['intern_cat']||'';
+  var f04cats=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸照護實習','綜合臨床實習'];
+  var f04catVal=_normInternCat(d['intern_cat']||'');
   var f04catOpts=f04cats.map(function(c){return '<option value="'+c+'" '+(f04catVal===c?'selected':'')+'>'+c+'</option>';}).join('');
   var f04catOC="APP.formData['"+fid+"']=APP.formData['"+fid+"']||{};APP.formData['"+fid+"']['intern_cat']=this.value;saveDraftField('"+fid+"','intern_cat',this.value)";
   h+='<div class="field"><label>實習類別</label><select data-fid="'+fid+'" data-key="intern_cat" onchange="'+f04catOC+'" style="width:100%;padding:7px 10px;border:1px solid var(--border);border-radius:var(--r);font-size:13px;background:#fff;"><option value="">請選擇實習類別</option>'+f04catOpts+'</select></div>';
@@ -11237,7 +11239,7 @@ const F12_ESSAY_ITEMS = [
    '本次實習中您補足或深化了哪些長期呼吸照護相關知識？'],
   ['f12_q3', '3. 臨床技能',
    '實際操作與執行層面的學習與精進（含技術熟練度、判斷力）。'],
-  ['f12_q4', '4. 我對於長期呼吸治療學實習心得',
+  ['f12_q4', '4. 我對於長期呼吸照護實習心得',
    '整體而言，這段實習帶給您的收穫與感受。'],
   ['f12_q5', '5. 對於如何增進長期呼吸治療實習成效，我的建議是：',
    '對課程安排、帶教方式、環境或制度的具體建議。']
@@ -12641,9 +12643,9 @@ function buildF16(f,d,canT,fkey,canS){
   }
   // ★ 自動帶入實習學校／類別／日期(學生本人或老師選定的學生)
   autoFillInternInfo(fid,d);
-  const cats=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸治療學實習','綜合臨床實習'];
+  const cats=['基礎呼吸照護實習','重症呼吸照護實習','小兒呼吸照護實習','長期呼吸照護實習','綜合臨床實習'];
   const schools=(APP.config&&APP.config.schools)||['長庚科技大學嘉義分部-呼吸照護系','高雄醫學大學-呼吸治療學系','輔仁大學-呼吸治療學系','長庚大學-呼吸治療學系','台北醫學大學-呼吸治療學系'];
-  const catOpts=cats.map(function(v){return '<option value="'+v+'" '+((d['intern_cat']||d['cat'])===v?'selected':'')+'>'+v+'</option>';}).join('');
+  const catOpts=cats.map(function(v){return '<option value="'+v+'" '+(_normInternCat(d['intern_cat']||d['cat'])===v?'selected':'')+'>'+v+'</option>';}).join('');
   let schOpts=schools.map(function(v){return '<option value="'+v+'" '+(d['school']===v?'selected':'')+'>'+v+'</option>';}).join('');
   // 若帳號帶入的學校不在清單中，補成已選取選項，避免顯示「請選擇」
   var _f16sch=d['school']||'';
@@ -13785,7 +13787,7 @@ function _buildExamPostPinGate(fid){
     '<div class="card-head" style="background:linear-gradient(135deg,#D97706 0%,#B45309 100%);"><div class="card-head-title" style="color:#fff;">🔒 筆試後測需 PIN 碼解鎖</div></div>'+
     '<div class="card-body">'+
     '<div style="font-size:13px;color:#374151;line-height:1.7;margin-bottom:14px;">'+
-    '此份「<b>筆試後測－長期呼吸治療學實習</b>」考卷需由監考老師輸入專用 PIN 碼解鎖後方可作答。<br>'+
+    '此份「<b>筆試後測－長期呼吸照護實習</b>」考卷需由監考老師輸入專用 PIN 碼解鎖後方可作答。<br>'+
     '<span style="color:#6B7280;font-size:12px;">（後測 PIN 碼與一般表單的老師 PIN 為獨立設定，請向監考老師索取。）</span>'+
     '</div>'+
     '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">'+
@@ -14032,7 +14034,7 @@ function renderAdmin(){
       <div class="admin-card-head" style="background:linear-gradient(135deg,#D97706 0%,#B45309 100%);">📝 筆試後測 PIN 碼設定（即時同步至伺服器）</div>
       <div class="admin-card-body">
         <div style="font-size:12px;color:#7F1D1D;background:#FEF2F2;border:1px solid #FECACA;border-radius:6px;padding:10px 12px;margin-bottom:10px;line-height:1.7;">
-          ⚠ 此 PIN 碼<b>專供「筆試後測－長期呼吸治療學實習」</b>表單作答前解鎖使用，與一般「老師 PIN」<b>完全獨立</b>。<br>
+          ⚠ 此 PIN 碼<b>專供「筆試後測－長期呼吸照護實習」</b>表單作答前解鎖使用，與一般「老師 PIN」<b>完全獨立</b>。<br>
           建議用於監考時控管：學生需向監考老師索取此 PIN 才能開始作答後測。
         </div>
         <div style="font-size:11px;color:#1E40AF;background:#EFF6FF;border-left:3px solid #1E40AF;border-radius:4px;padding:8px 10px;margin-bottom:10px;line-height:1.7;">
@@ -15384,7 +15386,7 @@ function refreshStudentTable(){
       '</td>'+
       '<td style="min-width:210px;">'+
         '<select id="si-cat-'+escAttr(sid)+'" onchange="updateStudentIntern(\''+escAttr(sid)+'\')" style="width:100%;padding:2px 4px;border:1px solid var(--border);border-radius:4px;font-size:10px;margin-bottom:3px;"><option value="">—實習類別—</option>'+
-          INTERN_CATEGORIES.map(function(c){return '<option value="'+escAttr(c)+'" '+(acc.intern_cat===c?'selected':'')+'>'+esc(c)+'</option>';}).join('')+
+          INTERN_CATEGORIES.map(function(c){return '<option value="'+escAttr(c)+'" '+(_normInternCat(acc.intern_cat)===c?'selected':'')+'>'+esc(c)+'</option>';}).join('')+
         '</select>'+
         '<div style="display:flex;gap:3px;align-items:center;">'+
           '<input type="date" id="si-start-'+escAttr(sid)+'" value="'+escAttr(_normalizeDateStr(acc.intern_start))+'" title="實習起始日" onchange="updateStudentIntern(\''+escAttr(sid)+'\')" style="flex:1 1 0;min-width:0;padding:2px 3px;border:1px solid var(--border);border-radius:4px;font-size:10px;">'+
