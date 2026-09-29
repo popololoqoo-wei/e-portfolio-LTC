@@ -7359,25 +7359,25 @@ function downloadPDF(id){
   /* ─── 字型分工:body 用 sans 確保列印清晰,標題/章節/署名用 serif 賦予正式文件感 ─── */
   html+='body{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;font-size:11pt;color:#1A1612;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;} ';
   html+='*{-webkit-print-color-adjust:exact;print-color-adjust:exact;} ';
-  html+='.serif{font-family:"Microsoft JhengHei","PMingLiU","Noto Serif TC","Source Han Serif TC",serif;} ';
+  html+='.serif{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;} ';
   html+='table{width:100%;border-collapse:collapse;margin-bottom:12px;} ';
   html+='.header{text-align:center;border-bottom:2px solid #1E3A8A;padding-bottom:10px;margin-bottom:15px;} ';
   html+='.hosp{font-size:10pt;color:#1E3A8A;letter-spacing:1.5px;margin-bottom:4px;font-weight:600;} ';
   /* 表單主標題:serif、加大字距 */
-  html+='.title{font-family:"PMingLiU","Noto Serif TC","Source Han Serif TC",serif;font-size:17pt;font-weight:600;color:#1A1612;margin:8px 0 4px;letter-spacing:2px;} ';
+  html+='.title{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;font-size:17pt;font-weight:600;color:#1A1612;margin:8px 0 4px;letter-spacing:2px;} ';
   html+='.sub{font-size:10pt;color:#888;} ';
   html+='.info-bar{font-size:9pt;color:#666;margin-top:6px;text-align:center;} ';
   /* 系統版本：獨立一行、靠右，不與學生資訊擠在同一行 */
   html+='.ver-bar{font-size:8pt;color:#999;text-align:right;margin-top:3px;} ';
   /* 章節標題:serif、深藍底白字 */
-  html+='.section-head{font-family:"PMingLiU","Noto Serif TC","Source Han Serif TC",serif;background:#1E3A8A;color:#fff;font-weight:600;padding:6px 12px;font-size:11.5pt;margin-top:12px;margin-bottom:0;letter-spacing:1px;} ';
+  html+='.section-head{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;background:#1E3A8A;color:#fff;font-weight:600;padding:6px 12px;font-size:11.5pt;margin-top:12px;margin-bottom:0;letter-spacing:1px;} ';
   html+='.rating-grid{display:grid;border:1px solid #DDD;} ';
   html+='.r-cell{border:1px solid #DDD;padding:4px 6px;text-align:center;font-size:9pt;} ';
   html+='.r-head{background:#2471A3;color:#fff;font-weight:600;} ';
   html+='.r-sel-s{background:#2471A3;color:#fff;font-weight:700;} ';
   html+='.r-sel-t{background:#C0392B;color:#fff;font-weight:700;} ';
   /* 簽名區:serif、金線下框 */
-  html+='.sign-box{font-family:"PMingLiU","Noto Serif TC","Source Han Serif TC",serif;border-top:1px solid #B8860B;padding-top:10px;margin-top:10px;letter-spacing:1px;} ';
+  html+='.sign-box{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;border-top:1px solid #B8860B;padding-top:10px;margin-top:10px;letter-spacing:1px;} ';
   html+='</style></head><body>';
   
   // ── 頁首 ──
@@ -8225,7 +8225,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='<table>';
     html+=pdfR('學生姓名',val('s_name')||studentName||'—',false);
     html+=pdfR('實習類別',val('intern_cat')||val('cat')||'—',false);
-    html+=pdfR('輔導日期',val('date')||'—',false);
+    html+=pdfR('輔導日期',val('date')||'—',true);
     html+=pdfR('實習學校',val('school')||'—',false);
     html+='</table>';
     // ── 實習總指導教師查核 ──
@@ -8455,7 +8455,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='<table>';
     html+=pdfR('學生姓名',val('s_name')||studentName,false);
     html+=pdfR('實習學校',val('school'),false);
-    html+=pdfR('評核日期',singleDateOnly(val('s_date')),false);
+    html+=pdfR('評核日期',singleDateOnly(val('s_date')),true);
     html+=pdfR('實習類別',val('intern_cat'),false);
     html+='</table>';
     // ── D03 額外的呼吸器機型欄位 ──
@@ -8530,9 +8530,6 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     }
     // ── 評分等級 ──
     html+='<div class="section-head">評分等級</div>';
-    html+='<table>';
-    html+='<tr><td colspan="2" style="background:#FFF3CD;border:1px solid #F0C040;padding:5px 10px;font-size:10pt;font-weight:700;color:#8B6914;">★ UGY 分數需 ≥ 良：80-89 分</td></tr>';
-    html+='</table>';
     // 顯示所有評分等級選項，並 highlight 老師選擇的等級（與網頁版下拉選單對齊）
     var dopsGradeOpts=['優：90-100分','良：80-89分','佳：70-79分','尚可：60-69分','差：≦59分'];
     var dopsSelGrade=val('score_grade');
@@ -8595,7 +8592,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html+='<table>';
     html+=pdfR('學生姓名',val('s_name')||studentName,false);
     html+=pdfR('實習學校',val('school'),false);
-    html+=pdfR('評核日期',singleDateOnly(val('s_date')),false);
+    html+=pdfR('評核日期',singleDateOnly(val('s_date')),true);
     html+=pdfR('實習類別',val('intern_cat'),false);
     html+='</table>';
     // ── 臨床情境（複選） ──
@@ -9157,7 +9154,7 @@ function buildPDFContent(id,f,d,val,row,section,studentName,studentSchool,chk){
     html += '<div class="section-head">課程資訊</div>';
     html += '<table>';
     html += pdfR('課程名稱', ctBank.title, false);
-    html += pdfR('授課講師', ctBank.teacher, false);
+    if(ctBank.teacher) html += pdfR('授課講師', ctBank.teacher, false);
     html += pdfR('課程主題', ctBank.topic, false);
     html += pdfR('題目數量', ctTotalQ + ' 題（每題 ' + ctPerQ + ' 分，總分 100，及格 ' + ctPassLine + ' 分）', false);
     html += '</table>';
@@ -10805,6 +10802,12 @@ function buildF04Bedside(f,d,canT,fkey,canS){
 
   // 呼吸器設定參數（完整依Word原稿）
   h+='<div style="font-size:12px;font-weight:600;margin:10px 0 6px;">目前呼吸器設定：</div>';
+  // ── Mode 欄位：獨立全寬大框，超過寬度自動換到第二行（同重症／小兒版）──
+  var modeOC="APP.formData['"+fid+"']=APP.formData['"+fid+"']||{};APP.formData['"+fid+"']['vent_mode']=this.value;saveDraftField('"+fid+"','vent_mode',this.value)";
+  h+='<div style="display:flex;align-items:flex-start;gap:8px;margin:0 0 8px;">';
+  h+='<label style="font-size:13px;font-weight:600;white-space:nowrap;padding-top:7px;">Mode：</label>';
+  h+='<textarea rows="1" data-fid="'+fid+'" data-key="vent_mode" onchange="'+modeOC+'" oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\';" placeholder="例：PC-SIMV + PSV" style="flex:1 1 auto;min-width:120px;max-width:100%;padding:6px 10px;border:1px solid var(--border);border-radius:var(--r);background:#fff;color:var(--ink);font-size:13px;line-height:1.5;resize:vertical;overflow:hidden;font-family:var(--ff-sans);box-sizing:border-box;">'+(d['vent_mode']||'')+'</textarea>';
+  h+='</div>';
   h+='<table style="width:100%;border-collapse:collapse;font-size:11px;">';
 
   function paramCell(label,key,unit){
@@ -10818,9 +10821,9 @@ function buildF04Bedside(f,d,canT,fkey,canS){
   }
 
   h+='<tr>';
-  h+=paramCell('Mode','vent_mode','');
   h+=paramCell('FiO₂','fio2','%');
   h+=paramCell('PEEP','peep','cmH₂O');
+  h+='<td style="border:1px solid var(--border);padding:4px 6px;"></td>';
   h+='</tr><tr>';
   h+=paramCell2('Vt set/exp','vt_set','vt_exp','mL');
   h+=paramCell('Flow','flow','L');
@@ -11684,7 +11687,6 @@ function buildDOPS(f,d,canT,fkey,canS){
   var gradeHtml2=gradeOpts2.map(function(g){return '<option value="'+g+'" '+(d['score_grade']===g?'selected':'')+'>'+g+'</option>';}).join('');
   var scOC="saveDraftField('"+fid+"','score_grade',this.value)";
   h+='<div class="card"><div class="card-head"><div class="card-head-title">評分等級<span class="t-badge">老師</span></div></div><div class="card-body">';
-  h+='<div style="background:var(--teacher-soft);border:1px solid var(--teacher-line);border-radius:var(--r);padding:6px 12px;font-size:12px;font-weight:700;color:var(--teacher2);margin-bottom:10px;">★ UGY 分數需 ≥ 良：80-89 分</div>';
   h+='<div class="field"><select data-fid="'+fid+'" data-key="score_grade" data-teacher="1" '+(canT?'':'disabled')+' onchange="'+scOC+'" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:var(--r);font-size:13px;background:'+(canT?'#fff':'var(--cream)')+';">';
   h+='<option value="">請選擇評分等級</option>'+gradeHtml2+'</select></div>';
   h+='</div></div>';
@@ -13630,7 +13632,7 @@ function buildCourseTest(f, d, canT, fkey, canS){
        '<div class="card-head-title" style="color:#fff;">📚 ' + escapeExamHtml(bank.title) + '</div></div>' +
        '<div class="card-body" style="background:#EEF2FF;">' +
        '<div style="display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#1E1B4B;">' +
-       '<div><b>授課講師：</b>' + escapeExamHtml(bank.teacher) + '</div>' +
+       (bank.teacher ? '<div><b>授課講師：</b>' + escapeExamHtml(bank.teacher) + '</div>' : '') +
        '<div><b>課程主題：</b>' + escapeExamHtml(bank.topic) + '</div>' +
        '<div><b>題數：</b>' + totalQ + ' 題</div>' +
        '<div><b>計分：</b>每題 ' + perQ + ' 分（總分 100）</div>' +
@@ -14254,24 +14256,6 @@ function renderAdmin(){
       <div class="admin-card-body">
         <div class="admin-row"><input id="cohort-term-input" placeholder="例如：114學年度暑期實習" value="${(APP.cohortTerm||'').replace(/"/g,'&quot;')}"><button class="btn-add" onclick="saveCohortTerm()">儲存</button></div>
         <div style="font-size:11px;color:var(--ink3);">💡 此處填的文字會直接顯示在「班級統整」PDF 表頭的「學期」欄。留空則由系統依實習起日自動推算。</div>
-      </div>
-    </div>
-
-    <!-- Course Topics & Speakers -->
-    <div class="admin-card">
-      <div class="admin-card-head">課程主題管理（課程滿意度下拉選項）</div>
-      <div class="admin-card-body">
-        <div class="admin-row"><input id="new-topic" placeholder="新增課程主題"><button class="btn-add" onclick="addTopic()">＋ 新增</button></div>
-        <div style="font-size:11px;color:var(--ink3);margin-bottom:6px;">💡 可拖曳 ⋮⋮ 圖示自由排序，按「修改」可編輯名稱</div>
-        <div id="topic-list"></div>
-      </div>
-    </div>
-    <div class="admin-card">
-      <div class="admin-card-head">演講者管理</div>
-      <div class="admin-card-body">
-        <div class="admin-row"><input id="new-speaker" placeholder="新增演講者姓名"><button class="btn-add" onclick="addSpeaker()">＋ 新增</button></div>
-        <div style="font-size:11px;color:var(--ink3);margin-bottom:6px;">💡 可拖曳 ⋮⋮ 圖示自由排序，按「修改」可編輯名稱</div>
-        <div id="speaker-list"></div>
       </div>
     </div>
 
@@ -17698,7 +17682,7 @@ function batchDownloadPDF(){
   allHtml+='body{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;font-size:10pt;color:#1A1612;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}';
   allHtml+='*{-webkit-print-color-adjust:exact;print-color-adjust:exact;}';
   /* ─── 字型分工:body 用 sans 確保列印清晰,標題/章節/署名用 serif 賦予正式文件感 ─── */
-  allHtml+='.serif{font-family:"PMingLiU","Noto Serif TC","Source Han Serif TC",serif;}';
+  allHtml+='.serif{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;}';
   allHtml+='table{width:100%;border-collapse:collapse;margin-bottom:10px;}';
   allHtml+='td,th{border:1px solid #DDD;padding:5px 8px;font-size:10pt;}';
   /* ★ 每張表單獨立成頁:列印時強制下一張表單從新一頁開始 */
@@ -17715,11 +17699,11 @@ function batchDownloadPDF(){
   allHtml+='.header{text-align:center;border-bottom:2px solid #1E3A8A;padding-bottom:10px;margin-bottom:12px;}';
   allHtml+='.hosp{font-size:9pt;color:#1E3A8A;letter-spacing:1.5px;font-weight:600;}';
   /* 表單主標題:serif、加大字距 */
-  allHtml+='.title{font-family:"PMingLiU","Noto Serif TC","Source Han Serif TC",serif;font-size:16pt;font-weight:600;margin:6px 0 4px;letter-spacing:2px;}';
+  allHtml+='.title{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;font-size:16pt;font-weight:600;margin:6px 0 4px;letter-spacing:2px;}';
   allHtml+='.sub{font-size:9pt;color:#888;}';
   allHtml+='.info-bar{font-size:9pt;color:#555;margin-top:5px;background:#F5F5F0;padding:4px 8px;border-radius:3px;text-align:center;}';
   /* 章節標題:serif */
-  allHtml+='.sec{font-family:"PMingLiU","Noto Serif TC","Source Han Serif TC",serif;background:#1E3A8A;color:#fff;font-weight:600;padding:6px 12px;margin-top:10px;letter-spacing:1px;}';
+  allHtml+='.sec{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Source Han Sans TC",sans-serif;background:#1E3A8A;color:#fff;font-weight:600;padding:6px 12px;margin-top:10px;letter-spacing:1px;}';
   allHtml+='.t-row td{background:#FFF5F5;}';
   allHtml+='.s-row td{background:#F5F9FF;}';
   allHtml+='.r-sel-s{background:#2471A3!important;color:#fff!important;font-weight:700;}';
